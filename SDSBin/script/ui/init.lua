@@ -1,0 +1,6 @@
+dofile_show_err "script/ui/base.lua"
+dofile_show_err "script/ui/dialog.lua"
+dofile_show_err "script/ui/obj.lua"
+dofile_show_err "script/ui/obj_group.lua"
+dofile_show_err "script/ui/animation.lua"
+dofile_show_err "script/ui/format_string.lua"

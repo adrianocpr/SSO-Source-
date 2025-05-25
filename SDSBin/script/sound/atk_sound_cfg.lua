@@ -1,0 +1,8 @@
+AtkSoundType =
+{ 
+}
+
+
+AtkDefRelation =
+{
+}
