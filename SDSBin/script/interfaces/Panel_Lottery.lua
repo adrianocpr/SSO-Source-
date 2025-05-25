@@ -1,0 +1,1 @@
+Panel_Lottery = DlgTemplate:new({this = "Panel_Lottery"})
