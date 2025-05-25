@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serverlist version="1">
+	<announcement url="http://10.68.24.68:8080/announcement.xml"/>
+	<district name="内部测试">
+		<server name="策划测试" zoneid="2801" recommend="true" new="true" desc="测试！测试！测试！测试用的小服服">
+			<address name="电信" ip="10.68.24.68" port="29000"/>
+			<address name="网通" ip="10.68.24.68" port="29000"/>
+		</server>
+		<server name="删档测试" zoneid="2893">
+			<address name="电信" ip="10.68.24.67" port="29000"/>
+			<address name="网通" ip="10.68.24.67" port="29000"/>
+		</server>		
+		<server name="承彧测试" zoneid="2810">
+			<address name="电信" ip="10.68.24.69" port="39000"/>
+			<address name="网通" ip="10.68.24.69" port="39000"/>
+		</server>
+		<server name="承彧跨服" zoneid="2828" new="true">
+			<address name="电信" ip="10.68.24.69" port="49000"/>
+			<address name="网通" ip="10.68.24.69" port="49000"/>
+		</server>
+	</district>
+	<district name="内部测试2">
+		<server name="策划测试2" zoneid="2802">
+			<address name="电信" ip="10.68.24.68" port="49000"/>
+			<address name="网通" ip="10.68.24.68" port="49000"/>
+		</server>
+		<server name="跨服" zoneid="2851" cross_server="true">
+			<address name="电信" ip="10.68.24.68" port="39000"/>
+			<address name="网通" ip="10.68.24.68" port="39000"/>
+		</server>
+	</district>
+	<district name="外部测试">
+		<server name="对外发布(212)" zoneid="2806">
+			<address name="电信" ip="10.68.52.210" port="29000"/>
+			<address name="网通" ip="10.68.52.210" port="29000"/>
+		</server>
+		<server name="对外发布2(96)" zoneid="2805">
+			<address name="电信" ip="10.68.52.97" port="29000"/>
+			<address name="网通" ip="10.68.52.97" port="29000"/>
+		</server>
+		<server name="对外发布跨服(176)" zoneid="2807" cross_server="true">
+			<address name="电信" ip="10.68.52.177" port="29000"/>
+			<address name="网通" ip="10.68.52.177" port="29000"/>
+		</server>
+	</district>
+	<district name="寻宝网测试">
+		<server name="原服" zoneid="2893">
+			<address name="电信" ip="10.68.24.67" port="29000"/>
+			<address name="网通" ip="10.68.24.67" port="29000"/>
+		</server>
+		<server name="跨服" zoneid="2894" cross_server="true">
+			<address name="电信" ip="10.68.24.67" port="39000"/>
+			<address name="网通" ip="10.68.24.67" port="39000"/>
+		</server>
+	</district>
+</serverlist>

@@ -1,0 +1,645 @@
+// 第一个数字为x坐标，0/-1/-2表示靠左居中靠右，正数表示从左向右数多少个像素，负数-2表示从右向左数多少个像素。第二个数字为y方向，0表示上与x类似。第三个数字0表示初始不显示，1表示初始显示。
+// 文件名必须和xml文件配置dialog name相同
+// 要求subdiaog文件必须在程序中配置,不允许在xml文件中指定加载某个subdialog文件
+// ---------------------------------------------------
+// 在xml所在行末尾使用#|可以指定界面的特殊参数。使用|分割各个参数。
+// 可选的初始化参数包括：
+// init 			游戏开始时立即加载(默认行为是按需加载)
+// always_tick		无论界面是否显示，均会执行Tick(默认行为是仅当界面显示时执行Tick)
+// never_release	在切换AUIManager时不会被销毁
+// auto_release		在游戏中一段时间内未使用将被自动销毁(如果使用了init, always_tick或never_release则无视auto_release)
+
+// 主界面
+Panel_Portrait.xml  0 0 1						#|init|never_release
+Panel_ChatInput.xml -1 -1 1			            #|init
+Panel_ChatOutput1.xml 0 -255 1					#|init
+Panel_ChatOutput2.xml 0 -404 1                  #|init
+Panel_ChatOutput3.xml -1 -1 1	                #|init
+Panel_Activity.xml	-1	-1	0
+Panel_NumberRoll.xml -1 -1 0
+Panel_Radar.xml -2 35 1			                #|init
+Panel_SystemBar.xml	-2	-2	1					#|init
+Panel_ProgressBar.xml -1 -200 0                 #|init|never_release|always_tick
+Panel_Exp.xml 0	-2	1                           #|init|never_release
+Panel_QuickBarOriginal.xml 0 0 0				#|init|never_release
+Panel_QuickBar.xml 0	-2 1                    #|init|never_release
+Panel_QuickBarTemp.xml -1 -1 0					#|init|never_release|always_tick
+Panel_QuickBarSummon.xml -1 -1 0
+Panel_QuickBarShape.xml -1 -1 0
+Panel_DoubleExp.xml -1 230 0					#|init
+Panel_BossHurt.xml	-330 -1 0					
+Panel_BossHurtMini.xml	-330 -1 0				#|auto_release
+Panel_EnemyList.xml	-330 -1 0					#|never_release
+Panel_EnemyListMini.xml	-330 -1 0				#|never_release
+
+Panel_Top.xml -1 -1 0
+Panel_ChangePro.xml -1 -1 0
+Panel_Confess.xml -1 -1 0
+Panel_Athena.xml -1 -1 0
+Panel_ChoosePro.xml -1 -1 0
+Panel_ChooseNormalSub.xml -1 -1 0
+Panel_ChooseDetailSub.xml -1 -1 0
+Panel_ExpExchange.xml -1 -1 0
+
+// NPC
+Panel_NpcMask1.xml -1 0 0 
+Panel_NpcMask2.xml -1 -2 0
+Panel_NPCContent.xml -1 -1 0
+Panel_Npc.xml	40	-1	0
+Panel_NPCContent_Tips.xml	40	-1	0
+Panel_Vip.xml		-1 -1 0
+Panel_SubVip1.xml	-1 -1 0
+Panel_SubVip1_1.xml -1 -1 0
+Panel_SubVip1_2.xml -1 -1 0
+Panel_SubVip2.xml	-1 -1 0
+Panel_Player.xml -1 -1 0
+
+// 各种消息框
+Panel_MsgBoxSample.xml -1 -1 0
+Panel_MsgNotify.xml -1 -1 0
+Panel_InputBox.xml -1 -1 0
+Panel_InputMoney.xml	-1	-1	0
+Panel_MsgBoxItemMoney.xml	-1	-1	0
+Panel_InputPassword.xml	-1	-1	0
+Panel_UpdatePassword.xml	-1	-1	0
+Panel_SettingPassword.xml	-1	-1	0
+Panel_MessageQuit.xml -1 -1 0
+Panel_PopInfoList.xml -1 -1 0
+Panel_BubbleHint.xml -1 200 0
+Panel_Question.xml -1 -1 0
+Panel_Draw.xml -1 -1 0
+
+// 战斗相关
+Panel_PickUp.xml -1 -1 0
+Panel_LootRoll.xml -1 -200 0
+Panel_ComboHit.xml -250 -250 1
+Panel_ComboHitQTE.xml -1 -200 0
+Panel_QTE.xml -1 -200 0
+Panel_Revive.xml -1 -1 0
+Panel_MsgSkills.xml -1 -1 0
+Panel_AnimationGfx.xml -1 -1 0
+Panel_QTEfinish.xml -1 -1 0
+Panel_QteHint.xml -1 -1 0
+Panel_QtePic.xml -1 -1 0
+Panel_TeamSkills.xml -1 -1 0
+
+// 反外挂
+Panel_Captcha.xml -150 -150 0
+Panel_CaptchaType3.xml -150 -150 0
+Panel_CaptchaType4.xml -150 -150 0
+
+// 慢节奏PVP
+Panel_LeisureTop.xml -1 -1 0
+Panel_LeisurePK.xml -1 -1 0
+Panel_LeisurePKSub1.xml -1 -1 0
+Panel_LeisurePKSub2.xml -1 -1 0
+Panel_LeisureArena.xml -1 -1 0
+Panel_LeisureMatchList.xml -1 -1 0
+Panel_LeisureMyMatch.xml -1 -1 0
+Panel_LeisurePKAnnal.xml -1 -1 0
+
+// 选中目标
+Panel_MainTarget.xml 160 0 0                    	#|never_release
+Panel_MainTargetNpc.xml 160 0 0						#|never_release
+Panel_MainTargetMonster.xml 160 0 0					#|never_release
+Panel_MainTargetBoss.xml 160 0 0                   	#|never_release
+Panel_MainTargetElite.xml 160 0 0                  	#|never_release
+Panel_MainTargetPet.xml 160 0 0              		#|never_release
+Panel_MainTargetOfTarget.xml 230 35 0               #|never_release
+Panel_MainTargetBossBottom.xml -1 -200 0            #|never_release
+Panel_TargetCastBar.xml -1 300 0
+
+// 地图
+Panel_PrecinctInfo.xml -1	110	0					#|never_release
+Panel_WorldMap.xml -1 -1 0
+Panel_WorldMapNpcList.xml -1 -1 0
+Panel_WorldMapPosList.xml -1 -1 0
+Panel_WorldMapMark.xml -2	-25	0
+Panel_RadarMark.xml -2 35 0
+
+//人物属性
+Panel_RoleInfoMain.xml -1 -1 0
+Panel_RoleInfoAttributeList.xml -1 -1 0
+Panel_RoleInfoAttribute.xml -1 -1 0
+Panel_RoleInfoTest.xml -1 -1 0
+Panel_BuffDebuff.xml -24 30	1						#|never_release
+Panel_Reputation.xml -45 -1 0
+Panel_ReputationTree.xml -1 -1 0					#|templ
+Panel_Cosmos.xml -1 -1 0
+Panel_Cosmos2.xml -1 -1 0
+Panel_CosmosMain.xml -1 -1 0
+Panel_CosmosStar.xml -1 -1 0
+Panel_CosmosAstrology.xml -1 -1 0
+Panel_Cosmorank.xml -1 -1 0
+Panel_Title.xml -1 -1 0
+Panel_TitleTree.xml -1 -1 0
+Panel_TitleListSub.xml -1 -1 0
+Panel_TitlePackSub.xml -1 -1 0
+Panel_ViewCosmos.xml -1 -1 0
+Panel_ViewTalent.xml -1 -1 0
+Panel_ViewPlayer.xml -1 -1 0
+Panel_SaintClothSub.xml -1 -1 0
+Panel_SaintCloth.xml -1 -1 0
+Panel_SaintClothStarInfo.xml -1 -1 0
+Panel_SaintClothEnhance.xml -1 -1 0
+Panel_MsgSaintEnhance.xml -1 -1 0
+Panel_powerPointSelf.xml -1 -1 0
+Panel_powerPointCompare.xml -1 -1 0
+Panel_Pray.xml -1 -1 0
+Panel_KeyLevel.xml -1 -1 0
+
+//生产
+Panel_Produce.xml -45	-1 0
+Panel_ProduceLearn.xml -1 -1 0
+
+//技能
+Panel_RoleInfoSkills.xml -1 -1 0
+Panel_RoleInfoSkills2.xml -1 -1 0
+Panel_Skills.xml 45	-1	0								#|auto_release
+Panel_SkillsEnergy.xml -336 -160 0						#|auto_release
+Panel_SkillsIce.xml -336 -160 0							#|auto_release
+Panel_SkillsFire.xml -336 -160 0						#|auto_release
+Panel_SkillsBean.xml -336 -160 0						#|auto_release
+Panel_SkillsSin.xml -336 -160 0							#|auto_release
+Panel_ProfLearn.xml -1 -1 0
+Panel_SkillsLearnMsg.xml -1 -1 0
+Panel_Charge.xml -1 -130 0
+Panel_SequenceEditor.xml -1 -1 0
+Panel_RoleInfoGift.xml -1 -1 0
+Panel_OriginGfx.xml -1 -1 0
+
+//任务
+Panel_Quest.xml -1 -1 0									#|auto_release
+Panel_Quest_Library.xml -1 -1 0							#|auto_release
+Panel_Quest_Global_Library.xml -1 -1 0					#|auto_release
+Panel_Quest_Ring.xml -1 -1 0							#|auto_release
+Panel_QuestBenefitLib.xml -1 -1 0						#|auto_release
+Panel_QuestTrace.xml -22 -1 0							#|init
+Panel_QuestAvailable.xml -1 -1 0						
+Panel_PortraitDialog.xml -1 -1 0						
+Panel_QuestSub.xml -1 -1 0
+Panel_ItemTips.xml -1 -180 0							#|init|always_tick
+Panel_InputItemQuest.xml -1 -1 0						#|auto_release
+Panel_Book.xml -1 -1 0									#|auto_release
+Panel_OnlineGift.xml -1 -1 0							#|init
+Panel_OfflineAward.xml -1 -1 0							#|auto_release
+Panel_Raffle.xml	-1	-1	0
+
+//组队
+Panel_MainTeammatePortrait.xml 1 106 1 					#|always_tick
+Panel_TeamAssign.xml -1 -1 0
+Panel_TeamHint.xml	-1	-1	0							#|templ
+Panel_Raid.xml	-1	-1	0								#|always_tick
+Panel_TeamConfirm.xml	-1 -1 0
+Panel_PlayerNear.xml -1 -1 0
+Panel_RallyPoint.xml -1 -1 0
+Panel_TeamPK.xml	-1	-1	0
+Panel_TeamPK2.xml	-1	-1	0
+Panel_TeamPKGfx.xml	-1	-1	0
+Panel_TeamArena.xml	-1	-1	0
+Panel_TeamArenaAward.xml	-1	-1	0
+Panel_TeamArenaSub1.xml	-1	-1	0
+Panel_TeamArenaSub2.xml	-1	-1	0
+Panel_TeamArenaSub3.xml	-1	-1	0
+Panel_TeamArenaHint.xml	-1	-1	0
+Panel_TeamArenaReady.xml	-1	-1	0
+Panel_TeamArenaReadyBG.xml	-1	-1	0
+Panel_TeamArenaSummary.xml	-50	460	0
+
+//部分聊天
+Panel_ChatMini.xml -1 -1 0
+Panel_ChatEmotion.xml -1 -1 0
+Panel_MessageWorld.xml	-1 -1 0
+Panel_BodyLanguage.xml	-1 -1 0
+
+//社交
+Panel_Sociality.xml -1 -1 0
+Panel_TeamSub.xml -1 -1 0
+Panel_Circle.xml -1 -1 0
+Panel_MessageComboList.xml -1 -1 0
+Panel_NoCircle.xml -1 -1 0
+Panel_Marry.xml -1 -1 0
+
+// 好友
+Panel_FriendSub.xml -1 -1 0
+Panel_FriendSub1.xml -1 -1 0
+Panel_FriendSub2.xml -1 -1 0
+Panel_FriendSub3.xml -1 -1 0
+Panel_FriendSub4.xml -1 -1 0
+Panel_FriendSub5.xml -1 -1 0
+Panel_MsgBoxEnemy.xml	-1	-1	0
+Panel_NoFriend.xml -1 -1 0
+Panel_Push.xml	-1	-1	0
+Panel_OnlineNotice.xml	-1	-1	0
+Panel_InputAddFriend.xml -1 -1 0
+Panel_SecretLove.xml	-1	-1	0
+Panel_FriendTalk.xml -1 -1 0
+Panel_FriendHistory.xml	-1	-1	0
+Panel_FriendTalkHistorySub.xml	-1	-1	0
+Panel_Flower.xml	-1	-1	0
+Panel_FlowerAnnal.xml	-1	-1	0
+
+// 军团旧
+Panel_ArmyJoin.xml -1 -1 0
+Panel_ArmyBaseOther.xml	-1	-1	0
+Panel_LeagueBaseLevelUp.xml	-100	-100	0
+Panel_ArmyTechSub.xml -1 -1 0
+Panel_ArmyTech.xml -1 -1 0
+Panel_NoArmyTech.xml -1 -1 0
+// 军团新
+Panel_Army.xml	-1	-1	0
+Panel_ArmyBasicSub.xml	-1	-1	0
+Panel_ArmyManageSub.xml	-1	-1	0
+Panel_ArmyDutySub.xml	-1	-1	0
+Panel_ArmyBaseSub.xml	-1	-1	0
+Panel_ArmyBattleSub.xml	-1	-1	0
+Panel_ArmyForumSub.xml	-1	-1	0
+Panel_ArmyAllianceSub.xml	-1	-1	0		
+Panel_NoArmy.xml	-1	-1	0
+Panel_LeagueRaid.xml	-1	-1	0
+Panel_LeagueMap.xml	-1	-1	0
+Panel_LeagueInformation.xml	-1	-1	0
+Panel_SkillEmpower.xml	-1	-1	0
+Panel_ArmyMiracle.xml	-1	-1	0
+Panel_ArmyBank.xml	-1	-1	0
+Panel_ArmyBankRightSet.xml	-1	-1	0
+Panel_ArmyBattleAward.xml	-1	-1	0
+Panel_LeaguePK.xml -1 -1 0
+Panel_LeaguePK2.xml	-1	-1	0
+Panel_TerritoryWar.xml	-1	-1	0
+Panel_TerritoryWarListSub.xml	-1	-1	0
+Panel_TerritoryWarDetailSub.xml	-1	-1	0
+Panel_ArmyRankBattleSub.xml	-1	-1	0
+Panel_TerritoryRewardSub.xml	-1	-1	0
+Panel_TerritoryTrace.xml -22 -1 0
+Panel_TerritoryMeDateSub.xml	-1	-1	0
+Panel_TerritoryOtherDateSub.xml	-1	-1	0
+Panel_TerritoryWarMaplSub5.xml	-1	-1	0
+Panel_TerritoryWarMaplSub7.xml	-1	-1	0
+Panel_TerritoryWarMaplSub8.xml	-1	-1	0
+Panel_TerritoryWarMaplSub9.xml	-1	-1	0
+Panel_TerritoryWarMaplSub10.xml	-1	-1	0
+Panel_TerritoryWarHint.xml	-1	-1	0
+Panel_ArmyTerritoryWarHint.xml	-1	-1	0
+Panel_ArmyAlliance.xml	-1	-1	0
+Panel_ArmyPoint.xml	-1	-1	0
+Panel_ArmyPointChange.xml	-1	-1	0
+Panel_ArmyPointAlter.xml	-1	-1	0
+Panel_ArmyIcon.xml		-1	-1	0
+
+// 师徒
+Panel_TeacherMark.xml	-1	-1	0
+Panel_Teacher.xml	-1	-1	0
+Panel_SubTeacher1.xml	-1	-1	0
+Panel_SubTeacher2.xml	-1	-1	0
+Panel_TeacherModle.xml	-1	-1	0
+Panel_SubTeacherModle1.xml	-1	-1	0
+Panel_TeacherGift.xml	-1	-1	0
+Panel_TeacherPush.xml	-1	-1	0
+
+//邮件
+Panel_MailList.xml -1 -1 0
+Panel_MailRead.xml -1 -1 0
+Panel_MailWrite.xml -1 -1 0
+
+//物品相关
+Panel_Store.xml 0 0 0
+Panel_StoreLog.xml -1 -1 0
+Panel_StoreSellAll.xml -1 -1 0
+Panel_Bank.xml 0 0 0
+Panel_Bag.xml -80	-1 0
+Panel_BagNormal_Sub.xml	0 0 0
+Panel_BagAttributeSubDouble.xml 0 0 0				#|templ
+Panel_BagAttributeSubSingle.xml 0 0 0				#|templ
+Panel_EnhanceTransferSub.xml	0 0 0
+Panel_BagTaskTemp_Sub.xml  0 0 0
+Panel_Bag_List.xml -80	-1 0
+Panel_MagicBox.xml	0 0 0
+Panel_MagicBoxCombineSub.xml -1 -1 0
+Panel_MagicBoxSplitSub.xml -1 -1 0
+Panel_MagicBoxBindSub.xml -1 -1 0
+Panel_MagicBoxImproveSub.xml -1 -1 0
+Panel_EquipMerge.xml 0 0 0
+Panel_EquipMergeEnhance.xml 0 0 0
+Panel_EquipDecompose.xml 0 0 0
+Panel_Enhance.xml 0 0 0
+Panel_EnhanceSub.xml 0 0 0
+Panel_EnhanceSecond.xml -1 -1 0
+Panel_EnhanceTransfer.xml 0 0 0
+Panel_EnhanceTransferPortable.xml -1 -1 0
+Panel_MessageEnhance.xml  0 0 0
+Panel_MessageNotice.xml	  0 0 0
+Panel_ItemList.xml 0 0 0
+Panel_EquipProcess.xml 0 0 0
+Panel_EquipContrast.xml -1 -1 0
+Panel_EquipChange.xml -1 -1 0
+Panel_SubAuctionListTree.xml 0 0 0
+Panel_SubAuctionList.xml 0 0 0
+Panel_SubAuctionSell.xml 0 0 0
+Panel_SubAuctionBuy.xml 0 0 0
+Panel_SubAuctionReceive.xml 0 0 0
+Panel_Auction.xml 0 0 0
+Panel_SubStarAuctionListTree.xml 0 0 0
+Panel_SubStarAuctionList.xml 0 0 0
+Panel_SubStarAuctionSell.xml 0 0 0
+Panel_SubStarAuctionReceive.xml 0 0 0
+Panel_StarAuction.xml 0 0 0
+Panel_StoneLevelUp.xml 0 0 0
+Panel_StallHost.xml 40 -1	0
+Panel_StallView.xml 40	-1	0
+Panel_StallSellSub.xml	-1	-1	0
+Panel_StallBuySub.xml	-1	-1	0
+Panel_StallViewBuySub.xml	-1	-1	0
+Panel_StallViewSellSub.xml	-1	-1	0
+Panel_MiniBar.xml	-1	-1	0
+Panel_TeamMiniBar.xml	-1	-1	0
+Panel_Lottery.xml -1 -1 0
+Panel_Trade.xml 40 -1 0
+Panel_Gshop.xml -1 -1 0
+Panel_GShopInputItemNum.xml -1 -1 0
+Panel_GshopPay.xml	-1 -1 0
+Panel_GshopTry.xml	-1 -1 0
+Panel_GshopChange.xml	-1 -1 0
+Panel_GshopQuickBuy.xml	-1 -1 0
+Panel_GshopProxyAddCash.xml	-1 -1 0
+Panel_ExchangeLimit.xml	-1 -1 0
+Panel_InputExchangeNum.xml	-1 -1 0
+Panel_WebShop.xml -1 -1 0
+
+//宠物
+Panel_PetPortrait.xml 80 90 0
+Panel_Pet.xml -1 -1 0
+Panel_PetOther.xml -1 -1 0
+Panel_PetLearnSkill.xml 40 -1 0
+Panel_PetEvo.xml 40 -1 0
+Panel_PetEvoResult.xml 40 -1 0
+Panel_PetQua.xml 40 -1 0
+Panel_PetGrowth.xml 40 -1 0
+Panel_PetMixSoul.xml 40 -1 0
+Panel_PetMoveSoul.xml 40 -1 0
+Panel_PetChoice.xml -1 -1 0
+Panel_PetExplore.xml -1 -1 0
+Panel_PetChat.xml -1 -1 0
+Panel_PetView.xml -1 -1 0
+Panel_PetInput.xml -1 -1 0
+Panel_PetBorn.xml -1 -1 0
+Panel_PetChoose.xml -1 -1 0
+Panel_PetMail.xml -1 -1 0
+Panel_Follower.xml -1 -1 0
+Panel_PetQuality.xml -1 -1 0
+
+//输入相关
+Panel_InputCommodityNum.xml -1 -1 0
+Panel_InputItemNum.xml -1 -1 0
+Panel_InputItem.xml -1 -1 0
+Panel_InputBuy.xml	-1	-1	0
+Panel_CurrencyCheck.xml	-1	-1	0
+
+//帮助
+Panel_HelpSecretary.xml -1 -1 0
+Panel_TouchMe.xml -1 -1 0
+Panel_TipsArrowDown.xml -1 -1 0
+Panel_Help.xml -1 -1 0
+Panel_HelpResult.xml -1 -1 0
+Panel_helpHomePage.xml -1 -1 0
+Panel_GuideUpdateSub.xml -1	-1 0
+Panel_GuideTask.xml -1 -1 0
+Panel_GuideSub.xml	-1	-1	0
+Panel_Guide.xml	-1	-1	0
+Panel_GuideBar.xml	-1  -1  0
+Panel_GuideMsg.xml	-1	-1	0
+Panel_GuideStage.xml -1	-1	0
+Panel_GuidePortable.xml	-1	-1	0
+Panel_GuideContainer.xml -1 -1 0
+Panel_GuideNew.xml -1 -230 0
+Panel_HelpNew.xml -1 -200 0
+Panel_HelpDynDirection.xml	-1	-1	0
+Panel_HelpHit.xml	-200	-200	0
+Panel_GuideExam.xml	-1	-1	0
+Panel_GuideCosmos.xml	-1	-1	0
+Panel_GuideExamSub.xml	-1	-1	0
+Panel_LevelHint.xml	-1	-1	0
+Panel_WeedingAward.xml 1 206 0 
+
+//活动
+Panel_Sign.xml -1 -1 0
+Panel_Daily.xml -1 -1 0
+Panel_DailySub.xml -1 -1 0
+Panel_TeamJoinHint.xml	-1	-1	0
+Panel_DailyChat.xml	-1	-1	0
+Panel_ActivityIntroduce.xml	-1	-1	0
+
+//欢迎
+Panel_First.xml -1 -1 0
+Panel_Welcome.xml -1 -1 0
+
+//成就
+Panel_AchiSumSub.xml	-1	-1	0
+Panel_AchiSelfSub.xml	-1	-1	0
+Panel_AchiCompareSub.xml	-1	-1	0
+Panel_Achi.xml	-1	-1	0
+Panel_AchiSumSub.xml	-1	-1	0
+
+//调试以及GM
+Panel_Console.xml	0	0	0
+Panel_GMConsole.xml	-1	-1	0
+Panel_GMDelMsgReason.xml	0	0	0
+Panel_GMFinishMsg.xml	0	0	0
+Panel_GMParam.xml	0	0	0
+Panel_GMCmdProcess.xml	-1	-1	0
+Panel_AskHelpToGM.xml	-1	-1	0
+Panel_InputTeleportGM.xml -1 -1 0
+Panel_ReportToGM.xml	  -1 -1 0
+
+//系统设置
+Panel_Settings.xml -1	-1	0
+Panel_SetSystem.xml -1	-1	0
+Panel_SetUI.xml -1	-1	0
+Panel_SetHotKeys.xml -1	-1	0
+Panel_NameBoardAdvancedSet.xml -1 -1 0
+Panel_VideoAdvancedSet.xml -1 -1 0
+Panel_PKSettings.xml	-1	-1	0
+Panel_SetEffect.xml	-1	-1	0
+Panel_SetLight.xml -1 -1 0
+
+//安全锁
+Panel_LockMain.xml -1 -1	0
+Panel_NoneTimeLock.xml -1 -1	0
+Panel_TimeLock.xml -1 -1	0
+Panel_NonePwLock.xml	-1	-1	0
+Panel_PwLock.xml	-1	-1	0
+Panel_TimeSetting.xml -1	-1	0
+Panel_ItemLock.xml -1 -1 0
+Panel_InputItemLockNum.xml -1 -1 0
+
+//副本
+Panel_RaidHint.xml -52 -1 0
+Panel_RaidInfo.xml -1 -1 0
+Panel_BattleAccountTime.xml -220 20 0
+Panel_DungeonAward.xml 0 0 0
+Panel_SubDungeonAward1.xml 0 0 0
+Panel_SubDungeonAward2.xml 0 0 0
+Panel_Solo_Challenge.xml -1 -1 0
+Panel_Solo_Challenge_Start.xml -1 -350 0
+Panel_Solo_Challenge_Lost.xml -1 -1 0
+Panel_Solo_Challenge_Win.xml -1 -350 0
+Panel_StarGuard.xml -210 200 0
+
+//GT
+Panel_GT_ChannelSet1.xml -1 -1	0
+Panel_GT_ChannelSet2.xml -1 -1	0
+Panel_SoundSet.xml -1 -1	0
+Panel_GTChannelList.xml -1 -1	0
+Panel_GTChannelMy.xml -1 -1	0
+Panel_GTMini.xml -1 -1	0
+
+//测试
+Panel_SwfControlTest.xml -1 -1 0
+
+// 内嵌浏览器
+Panel_IE.xml	-1	-1	0
+
+// 寻宝网
+Panel_SubTreasureListTree.xml -1 -1 0
+Panel_SubTreasureList.xml -1 -1 0
+Panel_SubTreasureSell.xml -1 -1 0
+//Panel_SubTreasureBuy.xml -1 -1 0
+Panel_SubTreasureReceive.xml -1 -1 0
+Panel_Treasure.xml -1 -1 0
+
+//图鉴
+Panel_PhotoBook.xml	-1	-1	0
+
+// 知道消息
+Panel_MsgKnow.xml	-1	-1	0
+
+// 其它
+Panel_Icon.xml 512 384 0
+Panel_StatusHint.xml -1 -1 0
+Panel_UIInfo.xml -1 -1 0
+Panel_RightMenu.xml -1 -1 0			#|auto_release
+Panel_RightSubMenu.xml -1 -1 0		#|auto_release
+Panel_Hint.xml -1 -1 0
+Panel_Route.xml -1 -150 0			#|init|always_tick
+Panel_DragDrop.xml -1 -1 0
+Panel_DragDropEx.xml -1 -1 0
+Panel_HidePanel.xml -2 0 0
+Panel_EnterWait.xml -1 -1 0			#|auto_release
+Panel_Esc.xml -1 -1 0				#|auto_release
+Panel_MsgBroadcast.xml	-1	-1	0
+
+// 动画相关
+Panel_AnimationMask1.xml -1 0 0 	#|auto_release
+Panel_AnimationMask2.xml -2 0 0		#|auto_release
+Panel_ChapterTips.xml -1 -1 0		#|auto_release
+Panel_Chapter.xml -1 -1 0			#|auto_release
+Panel_Section.xml -1 -1 0			#|auto_release
+Panel_AniText.xml -1 -1 0			#|auto_release
+Panel_AnimationName.xml -1 -1 0
+
+// 战场
+Panel_BattleStatistic.xml		-1 -1 0
+Panel_BattleFair.xml			-1	-1	0
+Panel_BattleFiledAward.xml		-1 -1 0
+Panel_ArmyBattleCount.xml		-1 -1 0
+Panel_BattleScout.xml			-1 -1 0
+Panel_BattleScoutOther.xml		-1 -1 0
+Panel_ServerWar.xml			-1	-1	0
+Panel_ServerWarPK.xml			-1	-1	0
+Panel_ServerWarPKTime.xml		-1	-1	0
+Panel_ArmyCrossPor.xml			-1	-1	0
+
+// 单人竞技场
+Panel_Arena.xml					-1 -1 0
+Panel_ArenaReady.xml			-1 -1 0
+Panel_ArenaAward.xml			-1 -1 0
+Panel_ArenaHint.xml				-1 -1 0
+Panel_ArenaConfig.xml			0 0 0
+Panel_ArenaWait.xml				0 335 0
+
+// 照相机
+Panel_Shots.xml		-1	-1	0
+Panel_ShotsConfig.xml	-1	-1	0
+
+//时代
+Panel_Time.xml		-1	-1	0
+Panel_SubTime1.xml		-1	-1	0
+Panel_SubTime2.xml		-1	-1	0
+Panel_SubTime3.xml		-1	-1	0
+Panel_SubTime4.xml	-1	-1	0
+Panel_SubTime5.xml	-1	-1	0
+
+// 铭刻
+Panel_Imprint.xml -1 -1 0
+
+//物品传送
+Panel_Transmit.xml -1 -1 0
+//物品占卜
+Panel_FriendAstrology.xml -1 -1 0
+
+// 网络电台
+Panel_Broadcast.xml	-1	-1	0
+Panel_Radio.xml	-1	-1	0
+
+//认证雅典娜
+Panel_SureAthena.xml	-1 -1 0
+Panel_SureAthena2.xml	-1 -1 0
+Panel_AthenaSure.xml	-1 -1 0
+
+// 推广人系统
+Panel_InviteCode.xml	-1	-1	0
+Panel_GoldenInviteCode.xml	-1	-1	0
+
+//星域
+Panel_Explore.xml	-1 -1 0
+Panel_SubExplore1.xml	-1 -1 0
+Panel_SubExplore2.xml	-1 -1 0
+Panel_ExploreBorn.xml	-1 -1 0
+Panel_SubExplore1_1.xml -1 -1 0
+Panel_SubExplore1_2.xml -1 -1 0
+
+//领土战
+Panel_LeagueTrans.xml -1 -1 0
+Panel_TerritoryWarReward.xml -1 -1 0
+
+//神器
+Panel_Artifact.xml -1 -1 0
+Panel_ArtifactSub1.xml -1 -1 0
+Panel_ArtifactSub2.xml -1 -1 0
+Panel_ArtifactTrans.xml -1 -1 0
+
+Panel_MessageCheck.xml	-1	-1	0
+Panel_MsgBoxExpin.xml	-1	-1	0
+
+// 调查问卷
+Panel_Questionaire.xml -1 -1 0
+Panel_Questionaire_AwardSub.xml -1 -1 0
+Panel_Questionaire_QuestSub.xml -1 -1 0
+
+// 数小鸟
+Panel_CountBirds_Game.xml -1 -1 0
+Panel_CountBirds_Quest.xml -1 -1 0
+Panel_CountBirds_Award.xml -1 -1 0
+Panel_CountBirds_Break.xml -1 -1 0
+Panel_CountBirds_Challenge.xml -1 -1 0
+
+// 灵魂之甲
+Panel_SoulArmor.xml				-1 -1 0		#|auto_release
+Panel_SoulArmor_ArmorUp.xml		-1 -1 0		#|auto_release
+Panel_SoulArmor_StoneSplit.xml	-1 -1 0		#|auto_release
+Panel_SoulArmor_StoneUp.xml		-1 -1 0		#|auto_release
+Panel_SoulArmor_FemaleSub.xml	-1 -1 0		#|auto_release
+Panel_SoulArmor_MaleSub.xml		-1 -1 0		#|auto_release
+Panel_SoulArmor_StoneList.xml	-1 -1 0		#|auto_release
+Panel_SoulArmor_SkillsList.xml	-1 -1 0		#|auto_release
+
+// 老界面, 待删除
+Win_BusinessQuit.xml	-1	-1	0
+Win_BShop.xml	70	-1	0
+Win_BShop2.xml	-110	-1	0
+Win_BuddyState.xml	-1	-1	0
+Win_GiftReceive.xml	-1	-80	0
+Win_GiftTime.xml	-1	20	0
+Win_RideTogether.xml -1	-1	0
+Win_ShopExchange.xml	45	-1	0
+Win_ShopExchange_InputNO.xml	-1	-1	0
