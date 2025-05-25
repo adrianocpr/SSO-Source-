@@ -1,0 +1,2299 @@
+---------------------------------------------------------------
+--  created:   2012.3.15
+--  author:    hanwei
+--
+--  自动镜头配置
+---------------------------------------------------------------
+SMART_POS     = 1   --移动
+SMART_ROTATE   = 2   --旋转
+SMART_FOV    = 3   --视角
+BLOOM_EFFECT   = 4   --全屏泛光
+DEPTH_OF_FIELD = 5    --景深
+RADIAL_BLUR    = 6    --径向模糊
+MOTION_BLUR    = 7    --运动模糊
+WRAP_EFFECT    = 8    --水下扭曲
+SMART_POS_RELATIVE     = 9   --移动
+SMART_ROTATE_RELATIVE   = 10   --旋转
+COLOR_CORRECTION_EFFECT= 11  --颜色校正
+KEY_FRAMES_LIST         = 0xffffffff   --帧序列
+
+---------------------------------------------------------------
+-- 空表来标识需要空过的效果操作
+EMPTY = {}
+
+-- 结束表用来实现最后一帧的过渡效果
+-- 相对移动和相对旋转
+END   = {}
+
+---------------------------------------------------------------
+-- 以下为可由策划配置部分
+---------------------------------------------------------------
+End_BLOOM_EFFECT ={ blurSize=0, brightThreshold=0, brightScale=0, }
+
+End_DEPTH_OF_FIELD ={ nearBlur=0, nearFocus=0, farFocus=0, farBlur=0, clampBlurFar=0, }
+
+End_RADIAL_BLUR ={ blurCenterX=0, blurCenterY=0, blurLength=0, inFocusRadius=0, outFocusRadius=0, }
+
+End_MOTION_BLUR ={ blurMax=0, blurScale=0, blurScalePosition=0, blurScaleRotation=0, inFocusDistance=0, outFocusDistance=0, }
+
+End_WRAP_EFFECT ={ scale=0, speed=0, }
+
+End_COLOR_CORRECTION_EFFECT ={ factor=0, startTexture="shaders\\Textures\\ccdefault.dds", endTexture="shaders\\Textures\\ccdefault.dds", }
+
+
+
+---------------------------------------------------------------
+-- 相机镜头定义
+
+smart_camera_config = {}
+smart_camera_config[1]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       800,
+       0,
+       1150,
+       0,
+       1200,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-.0934845,y=422.876,z=.988964,useTime=0,accelPercent=0},
+      {x=-.492944,y=429.622,z=-5.13827,useTime=0,accelPercent=0},
+      {x=-.225862,y=425.956,z=-.00818819,useTime=800,accelPercent=0},
+      {x=-.359047,y=424.807,z=1.94078,useTime=0,accelPercent=0},
+      {x=-2.90702,y=421.576,z=12.0101,useTime=1150,accelPercent=0},
+      {x=.0144425,y=423.556,z=-.825777,useTime=0,accelPercent=0},
+      {x=.0144425,y=423.556,z=-.825777,useTime=1200,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.00891971,y=-.953298,z=-.300571,w=.02829,useTime=0},
+      {x=-.00891971,y=-.953298,z=-.300571,w=.02829,useTime=800},
+      {x=.124556,y=-.110592,z=.0139714,w=.985931,useTime=0},
+      {x=.124556,y=-.110592,z=.0139714,w=.985931,useTime=1150},
+      {x=.00634114,y=.931548,z=-.3632,w=.016264,useTime=0},
+      {x=.000274283,y=.999468,z=-.00872692,w=.0314129,useTime=1200},
+   },
+}
+smart_camera_config[2]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       2950,
+       0,
+       400,
+       0,
+       850,
+       0,
+       450,
+       0,
+       500,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=7.40407,y=321.801,z=1,useTime=0,accelPercent=0},
+      {x=5.58267,y=323.675,z=-.447773,useTime=0,accelPercent=0},
+      {x=7.77368,y=322.807,z=-.222632,useTime=2950,accelPercent=0},
+      {x=7.77368,y=322.807,z=-.222632,useTime=0,accelPercent=0},
+      {x=7.77368,y=322.807,z=-.222632,useTime=400,accelPercent=0},
+      {x=7.7408,y=323.034,z=-.673115,useTime=0,accelPercent=0},
+      {x=7.89676,y=323.565,z=-3.39623,useTime=850,accelPercent=0},
+      {x=7.89676,y=323.565,z=-3.39623,useTime=0,accelPercent=0},
+      {x=7.90651,y=323.565,z=-3.56642,useTime=450,accelPercent=0},
+      {x=6.94194,y=322.867,z=1.27752,useTime=0,accelPercent=0},
+      {x=6.94194,y=322.867,z=1.27752,useTime=500,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.108219,y=-.858778,z=-.203007,w=.457796,useTime=0},
+      {x=-.00234928,y=.99751,z=.0575159,w=.040744,useTime=2950},
+      {x=-.00234928,y=.99751,z=.0575159,w=.040744,useTime=0},
+      {x=-.00234928,y=.997997,z=.0575159,w=.040744,useTime=400},
+      {x=-.000480999,y=.997997,z=.0627886,w=.00764527,useTime=0},
+      {x=-.000480999,y=.996539,z=.0627886,w=.00764527,useTime=850},
+      {x=-.000480997,y=.997997,z=.0627884,w=.00764527,useTime=0},
+      {x=-.000480997,y=.997997,z=.0627884,w=.00764527,useTime=450},
+      {x=-.0239386,y=-.199975,z=-.00488732,w=.979496,useTime=0},
+      {x=-.0239386,y=-.199975,z=-.00488732,w=.979496,useTime=500},
+   },
+}
+smart_camera_config[3]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       2300,
+       0,
+       200,
+       0,
+       1150,
+       0,
+       1000,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.306,y=351.14,z=149.897,useTime=0,accelPercent=0},
+      {x=-152.341,y=352.346,z=149.221,useTime=0,accelPercent=0},
+      {x=-151.294,y=352.006,z=148.035,useTime=2300,accelPercent=0},
+      {x=-151.294,y=352.006,z=148.035,useTime=0,accelPercent=0},
+      {x=-151.271,y=352.477,z=146.931,useTime=200,accelPercent=0},
+      {x=-151.271,y=352.477,z=146.931,useTime=0,accelPercent=0},
+      {x=-151.266,y=352.497,z=146.66,useTime=1150,accelPercent=0},
+      {x=-149.631,y=353.185,z=141.559,useTime=0,accelPercent=0},
+      {x=-147.632,y=354.792,z=139.247,useTime=1000,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.0713038,y=-.897569,z=-.158333,w=.405236,useTime=0},
+      {x=-.000383645,y=.999274,z=.0366415,w=.0104626,useTime=2300},
+      {x=-.000383645,y=.999274,z=.0366415,w=.0104626,useTime=0},
+      {x=-.00038358,y=.999274,z=.0366402,w=.0104612,useTime=200},
+      {x=-.000383576,y=.999274,z=.0366398,w=.0104612,useTime=0},
+      {x=-.000383576,y=.999274,z=.0366398,w=.0104612,useTime=1150},
+      {x=-.138527,y=.846705,z=.266895,w=.438939,useTime=0},
+      {x=-.138527,y=.846705,z=.266895,w=.438939,useTime=1000},
+   },
+}
+smart_camera_config[4]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       2300,
+       0,
+       200,
+       0,
+       950,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.306,y=351.14,z=149.897,useTime=0,accelPercent=0},
+      {x=-151.885,y=352.494,z=148.717,useTime=0,accelPercent=0},
+      {x=-150.411,y=352.945,z=149.16,useTime=2300,accelPercent=0},
+      {x=-151.335,y=352.041,z=149.892,useTime=0,accelPercent=0},
+      {x=-151.526,y=351.902,z=148.007,useTime=200,accelPercent=0},
+      {x=-151.526,y=351.902,z=148.007,useTime=0,accelPercent=0},
+      {x=-151.557,y=351.879,z=147.701,useTime=950,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.0295062,y=-.948641,z=-.0930153,w=.300927,useTime=0},
+      {x=-.0487004,y=.951286,z=.217874,w=.212637,useTime=2300},
+      {x=.00185393,y=-.998049,z=.0365961,w=.0505603,useTime=0},
+      {x=.00185393,y=-.998049,z=.0365961,w=.0505603,useTime=200},
+      {x=.00185391,y=-.998049,z=.0365957,w=.0505603,useTime=0},
+      {x=.00185391,y=-.998049,z=.0365957,w=.0505603,useTime=950},
+   },
+}
+smart_camera_config[5]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       700,
+       0,
+       1650,
+       0,
+       300,
+       0,
+       1000,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.306,y=351.14,z=149.897,useTime=0,accelPercent=0},
+      {x=-151.528,y=352.278,z=150.797,useTime=0,accelPercent=0},
+      {x=-151.781,y=354.333,z=152.886,useTime=700,accelPercent=0},
+      {x=-151.781,y=354.333,z=152.886,useTime=0,accelPercent=0},
+      {x=-152.018,y=354.372,z=152.016,useTime=1650,accelPercent=0},
+      {x=-150.88,y=351.279,z=140.49,useTime=0,accelPercent=0},
+      {x=-150.88,y=351.279,z=140.49,useTime=300,accelPercent=0},
+      {x=-150.88,y=351.633,z=140.49,useTime=0,accelPercent=0},
+      {x=-150.858,y=351.669,z=140.244,useTime=1000,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.216436,y=-.00511489,z=-.00113394,w=.976283,useTime=0},
+      {x=-.216436,y=-.00511489,z=-.00113394,w=.976283,useTime=700},
+      {x=-.216436,y=-.00511489,z=-.00113394,w=.976283,useTime=0},
+      {x=-.216436,y=-.00511489,z=-.00113394,w=.976283,useTime=1650},
+      {x=.00378655,y=.995274,z=-.0867692,w=.043433,useTime=0},
+      {x=.00378655,y=.995274,z=-.0867692,w=.043433,useTime=300},
+      {x=.0017956,y=.998169,z=-.0467671,w=.0383242,useTime=0},
+      {x=.0017956,y=.998169,z=-.0467671,w=.0383242,useTime=1000},
+   },
+}
+smart_camera_config[6]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       1000,
+       1000,
+       1000,
+       1000,
+       25000,
+   },
+   [SMART_POS]=
+   {
+      {x=-73.8383,y=320.667,z=258.043,useTime=1000,accelPercent=0},
+      {x=-73.5949,y=328.872,z=271.851,useTime=1000,accelPercent=0},
+      {x=-73.5949,y=328.872,z=271.851,useTime=1000,accelPercent=0},
+      {x=-73.569,y=318.889,z=262.248,useTime=1000,accelPercent=0},
+      {x=-73.569,y=318.889,z=262.248,useTime=25000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.00120578,y=-.99877,z=-.0313871,w=.038369,useTime=1000},
+      {x=.0000639005,y=-.999912,z=.00523015,w=.0122166,useTime=1000},
+      {x=.0000639005,y=-.999912,z=.00523015,w=.0122166,useTime=1000},
+      {x=.000304534,y=-.999353,z=.034898,w=.00872077,useTime=1000},
+      {x=.000304534,y=-.999353,z=.034898,w=.00872077,useTime=25000},
+   },
+}
+smart_camera_config[7]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       700,
+       0,
+       500,
+       0,
+       150,
+       0,
+       350,
+       0,
+       150,
+       0,
+       800,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.306,y=351.14,z=149.897,useTime=0,accelPercent=0},
+      {x=-150.415,y=353.018,z=151.014,useTime=0,accelPercent=0},
+      {x=-148.712,y=355.102,z=152.104,useTime=700,accelPercent=0},
+      {x=-148.712,y=355.102,z=152.104,useTime=0,accelPercent=0},
+      {x=-148.513,y=355.373,z=153.066,useTime=500,accelPercent=0},
+      {x=-151.814,y=354.485,z=150.929,useTime=0,accelPercent=0},
+      {x=-153.444,y=355.227,z=151.653,useTime=150,accelPercent=0},
+      {x=-153.444,y=355.227,z=151.653,useTime=0,accelPercent=0},
+      {x=-153.644,y=355.293,z=151.635,useTime=350,accelPercent=0},
+      {x=-153.644,y=355.293,z=151.635,useTime=0,accelPercent=0},
+      {x=-155.67,y=356.071,z=151.921,useTime=150,accelPercent=0},
+      {x=-155.67,y=356.071,z=151.921,useTime=0,accelPercent=0},
+      {x=-156.059,y=356.205,z=151.911,useTime=800,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.261623,y=.245916,z=.0691237,w=.930753,useTime=0},
+      {x=-.156803,y=.440826,z=.0785221,w=.880295,useTime=700},
+      {x=-.156803,y=.440826,z=.0785221,w=.880295,useTime=0},
+      {x=-.156803,y=.440826,z=.0785221,w=.880295,useTime=500},
+      {x=-.175728,y=-.459397,z=-.0932564,w=.865666,useTime=0},
+      {x=-.175728,y=-.459397,z=-.0932564,w=.865666,useTime=150},
+      {x=-.175728,y=-.459397,z=-.0932564,w=.865666,useTime=0},
+      {x=-.175728,y=-.459397,z=-.0932564,w=.865666,useTime=350},
+      {x=-.175728,y=-.459397,z=-.0932564,w=.865666,useTime=0},
+      {x=-.175728,y=-.459397,z=-.0932564,w=.865666,useTime=150},
+      {x=-.175728,y=-.459397,z=-.0932564,w=.865666,useTime=0},
+      {x=-.175728,y=-.459397,z=-.0932564,w=.865666,useTime=800},
+   },
+}
+smart_camera_config[8]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       1100,
+       0,
+       150,
+       0,
+       1000,
+       0,
+       1000,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.306,y=351.14,z=149.897,useTime=0,accelPercent=0},
+      {x=-149.686,y=352.995,z=149.78,useTime=0,accelPercent=0},
+      {x=-150.383,y=351.734,z=152.375,useTime=1100,accelPercent=0},
+      {x=-151.123,y=352.234,z=150.6,useTime=0,accelPercent=0},
+      {x=-145.415,y=351.501,z=150.499,useTime=150,accelPercent=0},
+      {x=-145.415,y=351.501,z=150.499,useTime=0,accelPercent=0},
+      {x=-144.472,y=350.97,z=150.383,useTime=1000,accelPercent=0},
+      {x=-142.233,y=354.149,z=142.867,useTime=0,accelPercent=0},
+      {x=-141.67,y=354.112,z=142.859,useTime=1000,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.195401,y=.674094,z=.19202,w=.685962,useTime=0},
+      {x=.070853,y=.326303,z=-.0245356,w=.942287,useTime=1100},
+      {x=.167026,y=.724776,z=-.188792,w=.641218,useTime=0},
+      {x=.167026,y=.724776,z=-.188792,w=.641218,useTime=150},
+      {x=.167026,y=.724776,z=-.188792,w=.641218,useTime=0},
+      {x=.167026,y=.724776,z=-.188792,w=.641218,useTime=1000},
+      {x=.0232817,y=.711639,z=-.0236093,w=.701762,useTime=0},
+      {x=.0232817,y=.711639,z=-.0236093,w=.701762,useTime=1000},
+   },
+}
+smart_camera_config[9]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       500,
+       1000,
+       500,
+       500,
+       500,
+   },
+   [SMART_POS]=
+   {
+      {x=14.2051,y=306.089,z=125.323,useTime=500,accelPercent=0},
+      {x=29.1501,y=314.116,z=119.25,useTime=1000,accelPercent=0},
+      {x=46.7387,y=320.472,z=116.586,useTime=500,accelPercent=0},
+      {x=103.524,y=306.635,z=126.98,useTime=500,accelPercent=0},
+      {x=103.524,y=306.635,z=126.98,useTime=500,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.00281028,y=-.592015,z=.00206438,w=.805919,useTime=500},
+      {x=.11897,y=-.586907,z=.0877139,w=.796048,useTime=1000},
+      {x=.0369881,y=-.747794,z=.0418082,w=.66158,useTime=500},
+      {x=-.0427887,y=-.711927,z=-.043543,w=.699595,useTime=500},
+      {x=-.0427886,y=-.711927,z=-.0435428,w=.699595,useTime=500},
+   },
+}
+smart_camera_config[10]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       2000,
+       1000,
+       7000,
+   },
+   [SMART_POS]=
+   {
+      {x=254.337,y=300.568,z=68.6108,useTime=2000,accelPercent=0},
+      {x=241.722,y=300.067,z=72.5455,useTime=1000,accelPercent=0},
+      {x=241.722,y=300.067,z=72.5455,useTime=7000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0570714,y=.573605,z=.0401106,w=.816156,useTime=2000},
+      {x=.0109361,y=.77922,z=-.0136019,w=.626507,useTime=1000},
+      {x=.0109361,y=.77922,z=-.0136019,w=.626507,useTime=7000},
+   },
+}
+smart_camera_config[11]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       3000,
+       32000,
+   },
+   [SMART_POS]=
+   {
+      {x=253.109,y=299.086,z=67.918,useTime=500,accelPercent=0},
+      {x=257.7,y=298.741,z=70.5006,useTime=3000,accelPercent=0},
+      {x=257.7,y=298.741,z=70.5006,useTime=32000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0148731,y=-.793117,z=-.019383,w=.608579,useTime=500},
+      {x=.0771625,y=-.695572,z=.0755633,w=.710293,useTime=3000},
+      {x=.0771625,y=-.695572,z=.0755633,w=.710293,useTime=32000},
+   },
+   [COLOR_CORRECTION_EFFECT]=
+   {
+       EMPTY,
+      {factor=1,startTexture="ad",endTexture="dsfasd",useTime=3000},
+       END,
+   },
+}
+smart_camera_config[12]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       2000,
+       2250,
+       0,
+       5000,
+   },
+   [SMART_POS]=
+   {
+      {x=-14.36,y=136.108,z=135.19,useTime=0,accelPercent=0},
+      {x=-14.36,y=136.108,z=135.19,useTime=2000,accelPercent=0},
+      {x=-16.74,y=136.291,z=137.77,useTime=2250,accelPercent=-1},
+      {x=-17.95,y=136.39,z=139.22,useTime=0,accelPercent=0},
+      {x=-17.13,y=135.661,z=138.31,useTime=5000,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.00950871,y=.931372,z=-.0243885,w=.363128,useTime=0},
+      {x=.00950871,y=.931372,z=-.0243885,w=.363128,useTime=2000},
+      {x=.00950871,y=.931372,z=-.0243885,w=.363128,useTime=2250},
+      {x=.00950871,y=.931372,z=-.0243885,w=.363128,useTime=0},
+      {x=.00950871,y=.931372,z=-.0243885,w=.363128,useTime=5000},
+   },
+}
+smart_camera_config[13]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       100,
+       8900,
+   },
+   [SMART_POS]=
+   {
+      {x=-143.204,y=353.907,z=125.945,useTime=100,accelPercent=0},
+      {x=-143.204,y=353.907,z=125.945,useTime=8900,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.104202,y=-.822327,z=-.159845,w=.536069,useTime=100},
+      {x=-.104202,y=-.822327,z=-.159845,w=.536069,useTime=8900},
+   },
+}
+smart_camera_config[14]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       100,
+       8900,
+   },
+   [SMART_POS]=
+   {
+      {x=-137.053,y=353.785,z=127.891,useTime=100,accelPercent=0},
+      {x=-137.053,y=353.785,z=127.891,useTime=8900,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.121756,y=.657583,z=.108863,w=.735466,useTime=100},
+      {x=-.121756,y=.657583,z=.108863,w=.735466,useTime=8900},
+   },
+}
+smart_camera_config[15]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       100,
+       8900,
+   },
+   [SMART_POS]=
+   {
+      {x=-136.121,y=354.217,z=126.822,useTime=100,accelPercent=0},
+      {x=-136.121,y=354.217,z=126.822,useTime=8900,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.127608,y=.775727,z=.166302,w=.595237,useTime=100},
+      {x=-.127608,y=.775727,z=.166302,w=.595237,useTime=8900},
+   },
+}
+smart_camera_config[16]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       100,
+       8900,
+   },
+   [SMART_POS]=
+   {
+      {x=-142.86,y=353.941,z=124.66,useTime=100,accelPercent=0},
+      {x=-142.86,y=353.941,z=124.66,useTime=8900,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.084522,y=-.908649,z=-.224868,w=.341537,useTime=100},
+      {x=-.084522,y=-.908649,z=-.224868,w=.341537,useTime=8900},
+   },
+}
+smart_camera_config[17]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       100,
+       8900,
+   },
+   [SMART_POS]=
+   {
+      {x=-142.226,y=353.985,z=123.003,useTime=100,accelPercent=0},
+      {x=-142.226,y=353.985,z=123.003,useTime=8900,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0280837,y=-.971307,z=-.18353,w=.148629,useTime=100},
+      {x=-.0280837,y=-.971307,z=-.18353,w=.148629,useTime=8900},
+   },
+}
+smart_camera_config[18]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       2000,
+       1000,
+       3000,
+   },
+   [SMART_POS]=
+   {
+      {x=-359.827,y=330.831,z=72.8155,useTime=2000,accelPercent=0},
+      {x=-335.037,y=329.479,z=79.0931,useTime=1000,accelPercent=0},
+      {x=-331.603,y=329.347,z=79.9589,useTime=3000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0245977,y=-.789518,z=-.0317111,w=.612414,useTime=2000},
+      {x=.0213895,y=-.789673,z=.0275752,w=.612534,useTime=1000},
+      {x=.0213895,y=-.789673,z=.0275752,w=.612534,useTime=3000},
+   },
+}
+smart_camera_config[19]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       1000,
+       4000,
+       4000,
+       2000,
+   },
+   [SMART_POS]=
+   {
+      {x=18.5885,y=369.007,z=284.588,useTime=1000,accelPercent=0},
+      {x=1.68463,y=369.108,z=283.955,useTime=4000,accelPercent=0},
+      {x=71.682,y=414.142,z=298.346,useTime=4000,accelPercent=0},
+      {x=71.682,y=414.142,z=298.346,useTime=1000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.100854,y=-.699876,z=.100854,w=.699878,useTime=1000},
+      {x=.124236,y=-.730223,z=.137977,w=.657497,useTime=4000},
+      {x=.134871,y=-.773637,z=.175766,w=.593634,useTime=4000},
+      {x=.134871,y=-.773637,z=.175766,w=.593634,useTime=1000},
+   },
+}
+smart_camera_config[20]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       5000,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-299.124,y=312.718,z=6.69045,useTime=0,accelPercent=0},
+      {x=-297.749,y=314.202,z=7.10498,useTime=5000,accelPercent=-1},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.199916,y=.294026,z=.0630335,w=.932528,useTime=5000},
+   },
+}
+smart_camera_config[21]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       1350,
+       0,
+       600,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=7.40407,y=321.801,z=1,useTime=0,accelPercent=0},
+      {x=7.86499,y=322.851,z=.0589597,useTime=0,accelPercent=0},
+      {x=6.83979,y=322.844,z=.232501,useTime=1350,accelPercent=0},
+      {x=6.70511,y=322.81,z=.984755,useTime=0,accelPercent=0},
+      {x=6.70511,y=322.81,z=.984755,useTime=600,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.00532375,y=.983336,z=.0291873,w=.17936,useTime=0},
+      {x=.00528921,y=-.90129,z=.0110084,w=.433043,useTime=1350},
+      {x=-.020818,y=-.397639,z=-.00902475,w=.917261,useTime=0},
+      {x=-.020818,y=-.397639,z=-.00902475,w=.917261,useTime=600},
+   },
+}
+smart_camera_config[22]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       1100,
+       0,
+       600,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.306,y=351.14,z=149.897,useTime=0,accelPercent=0},
+      {x=-150.886,y=351.582,z=148.463,useTime=0,accelPercent=0},
+      {x=-150.248,y=352.58,z=149.476,useTime=1100,accelPercent=0},
+      {x=-150.457,y=351.856,z=149.025,useTime=0,accelPercent=0},
+      {x=-150.457,y=351.856,z=149.025,useTime=600,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=.0177953,y=.978089,z=-.0941795,w=.184811,useTime=0},
+      {x=-.021281,y=.771527,z=.0258437,w=.635315,useTime=1100},
+      {x=.0712246,y=.486692,z=-.0398556,w=.869753,useTime=0},
+      {x=.0712246,y=.486692,z=-.0398556,w=.869753,useTime=600},
+   },
+}
+smart_camera_config[23]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       250,
+       0,
+       250,
+       0,
+       200,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.306,y=351.14,z=149.897,useTime=0,accelPercent=0},
+      {x=-151.611,y=352.307,z=149.159,useTime=0,accelPercent=0},
+      {x=-151.611,y=352.307,z=149.159,useTime=250,accelPercent=0},
+      {x=-151.611,y=352.307,z=149.159,useTime=0,accelPercent=0},
+      {x=-151.63,y=351.744,z=149.041,useTime=250,accelPercent=0},
+      {x=-151.63,y=351.744,z=149.041,useTime=0,accelPercent=0},
+      {x=-151.63,y=351.744,z=149.041,useTime=200,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.00116812,y=-.996396,z=-.0139109,w=.083669,useTime=0},
+      {x=-.00116812,y=-.996396,z=-.0139109,w=.083669,useTime=250},
+      {x=-.00116812,y=-.996396,z=-.0139109,w=.083669,useTime=0},
+      {x=-.00116812,y=-.996396,z=-.0139109,w=.083669,useTime=250},
+      {x=-.00116812,y=-.996396,z=-.0139109,w=.083669,useTime=0},
+      {x=-.00116812,y=-.996396,z=-.0139109,w=.083669,useTime=200},
+   },
+}
+smart_camera_config[24]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       700,
+       300,
+       0,
+       500,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.306,y=351.14,z=149.897,useTime=0,accelPercent=0},
+      {x=-151.528,y=352.278,z=150.797,useTime=0,accelPercent=0},
+      {x=-151.777,y=354.606,z=152.482,useTime=700,accelPercent=0},
+      {x=-151.777,y=354.606,z=152.482,useTime=300,accelPercent=0},
+      {x=-151.24,y=353.629,z=148.102,useTime=0,accelPercent=0},
+      {x=-150.912,y=353.308,z=139.011,useTime=500,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.216436,y=-.00511489,z=-.00113394,w=.976283,useTime=0},
+      {x=-.216436,y=-.00511489,z=-.00113394,w=.976283,useTime=700},
+      {x=-.216436,y=-.00511489,z=-.00113394,w=.976283,useTime=300},
+      {x=-.00417214,y=-.982683,z=-.183903,w=.0222938,useTime=300},
+      {x=-.00417214,y=-.982683,z=-.183903,w=.0222938,useTime=500},
+   },
+}
+smart_camera_config[25]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       700,
+       300,
+       0,
+       650,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.306,y=351.14,z=149.897,useTime=0,accelPercent=0},
+      {x=-152.341,y=352.346,z=149.221,useTime=0,accelPercent=0},
+      {x=-151.127,y=353.718,z=148.673,useTime=700,accelPercent=0},
+      {x=-151.127,y=353.718,z=148.673,useTime=700,accelPercent=0},
+      {x=-149.388,y=352.582,z=139.656,useTime=0,accelPercent=0},
+      {x=-149.388,y=352.582,z=139.656,useTime=650,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.0713038,y=-.897569,z=-.158333,w=.405236,useTime=0},
+      {x=.000393041,y=-.997171,z=.0749794,w=.00522717,useTime=700},
+      {x=.000393041,y=-.997171,z=.0749794,w=.00522717,useTime=300},
+      {x=-.0223736,y=.928684,z=.0567997,w=.365812,useTime=0},
+      {x=-.0223736,y=.928684,z=.0567997,w=.365812,useTime=650},
+   },
+}
+smart_camera_config[26]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       700,
+       0,
+       800,
+       0,
+       1500,
+       0,
+       150,
+       0,
+       500,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.306,y=351.14,z=149.897,useTime=0,accelPercent=0},
+      {x=-152.341,y=352.346,z=149.221,useTime=0,accelPercent=0},
+      {x=-151.433,y=352.866,z=146.96,useTime=700,accelPercent=0},
+      {x=-151.433,y=352.866,z=146.96,useTime=0,accelPercent=0},
+      {x=-151.446,y=352.678,z=145.717,useTime=800,accelPercent=0},
+      {x=-153.686,y=354.638,z=147.274,useTime=0,accelPercent=0},
+      {x=-151.691,y=354.14,z=148.905,useTime=1500,accelPercent=0},
+      {x=-151.295,y=353.706,z=148.605,useTime=0,accelPercent=0},
+      {x=-151.417,y=352.388,z=138.337,useTime=150,accelPercent=0},
+      {x=-151.417,y=352.388,z=138.337,useTime=0,accelPercent=0},
+      {x=-151.413,y=352.424,z=137.704,useTime=500,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.0713038,y=-.897569,z=-.158333,w=.405236,useTime=0},
+      {x=.000393041,y=-.997171,z=.0749794,w=.00522717,useTime=700},
+      {x=.000393041,y=-.997171,z=.0749794,w=.00522717,useTime=0},
+      {x=.000393041,y=-.997171,z=.0749794,w=.00522717,useTime=800},
+      {x=-.039668,y=-.91765,z=-.0948285,w=.383865,useTime=0},
+      {x=-.039668,y=-.91765,z=-.0948285,w=.383865,useTime=1500},
+      {x=-.0000989028,y=.999585,z=.0286091,w=.0034556,useTime=0},
+      {x=-.0000989028,y=.999585,z=.0286091,w=.0034556,useTime=150},
+      {x=-.0000987765,y=.999585,z=.0286081,w=.00345131,useTime=0},
+      {x=-.0000987765,y=.999585,z=.0286081,w=.00345131,useTime=500},
+   },
+}
+smart_camera_config[27]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       1000,
+       8000,
+       500,
+       2000,
+       4000,
+   },
+   [SMART_POS]=
+   {
+      {x=362.975,y=305.254,z=-207.602,useTime=1000,accelPercent=0},
+      {x=362.975,y=305.254,z=-207.602,useTime=8000,accelPercent=0},
+      {x=362.975,y=305.254,z=-207.602,useTime=500,accelPercent=0},
+      {x=358.473,y=303.584,z=-224.678,useTime=2000,accelPercent=0},
+      {x=358.473,y=303.584,z=-224.678,useTime=4000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.192246,y=.625901,z=.163035,w=.738044,useTime=1000},
+      {x=-.192246,y=.625901,z=.163035,w=.738044,useTime=8000},
+      {x=-.0795734,y=.237728,z=.0195448,w=.96787,useTime=500},
+      {x=-.147787,y=-.017263,z=-.00257998,w=.988865,useTime=2000},
+      {x=-.147787,y=-.017263,z=-.00257998,w=.988865,useTime=4000},
+   },
+}
+smart_camera_config[28]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       1000,
+       6000,
+       3000,
+   },
+   [SMART_POS]=
+   {
+      {x=374.813,y=295.129,z=-298.921,useTime=1000,accelPercent=0},
+      {x=366.834,y=294.989,z=-346.004,useTime=6000,accelPercent=0},
+      {x=366.834,y=294.989,z=-346.004,useTime=3000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.066177,y=-.0539573,z=-.00358384,w=.996342,useTime=1000},
+      {x=-.18881,y=.141711,z=.0275458,w=.971344,useTime=6000},
+      {x=-.18881,y=.141711,z=.0275458,w=.971344,useTime=3000},
+   },
+}
+smart_camera_config[29]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       1,
+       3000,
+       3000,
+       3000,
+       3000,
+   },
+   [SMART_POS]=
+   {
+      {x=367.096,y=295.759,z=-355.57,useTime=1,accelPercent=0},
+      {x=367.096,y=295.759,z=-355.57,useTime=3000,accelPercent=0},
+      {x=367.096,y=295.759,z=-355.57,useTime=3000,accelPercent=0},
+      {x=367.096,y=295.759,z=-355.57,useTime=3000,accelPercent=0},
+      {x=367.096,y=295.759,z=-355.57,useTime=3000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.206769,y=.102241,z=.0217315,w=.97279,useTime=1},
+      {x=-.100885,y=.845197,z=.171953,w=.495879,useTime=3000},
+      {x=-.0453299,y=-.953111,z=-.181811,w=.237634,useTime=3000},
+      {x=-.154133,y=-.568833,z=-.109537,w=.800421,useTime=3000},
+      {x=-.206769,y=.102241,z=.0217315,w=.97279,useTime=3000},
+   },
+}
+smart_camera_config[30]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       1000,
+       1000,
+       5000,
+       10000,
+   },
+   [SMART_POS]=
+   {
+      {x=357.678,y=291.612,z=-370.14,useTime=1000,accelPercent=0},
+      {x=357.678,y=291.612,z=-370.14,useTime=1000,accelPercent=0},
+      {x=365.852,y=291.612,z=-364.63,useTime=5000,accelPercent=0},
+      {x=365.852,y=291.612,z=-364.63,useTime=10000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.170375,y=.32508,z=.0596633,w=.928297,useTime=1000},
+      {x=-.00994841,y=-.987366,z=-.142281,w=.0690372,useTime=1000},
+      {x=-.0729837,y=.75114,z=.0842538,w=.650664,useTime=5000},
+      {x=-.0729837,y=.75114,z=.0842538,w=.650664,useTime=10000},
+   },
+}
+smart_camera_config[31]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       1000,
+       3000,
+   },
+   [SMART_POS]=
+   {
+      {x=136.004,y=321.963,z=-403.161,useTime=1000,accelPercent=0},
+      {x=136.004,y=321.963,z=-403.161,useTime=3000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0805039,y=.884193,z=.165403,w=.429377,useTime=1000},
+      {x=-.0805039,y=.884193,z=.165403,w=.429377,useTime=3000},
+   },
+}
+smart_camera_config[32]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       500,
+       2000,
+       5000,
+   },
+   [SMART_POS]=
+   {
+      {x=20.1424,y=320.284,z=-342.956,useTime=500,accelPercent=0},
+      {x=7.42568,y=320.104,z=-349.355,useTime=2000,accelPercent=0},
+      {x=7.42568,y=320.104,z=-349.355,useTime=5000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.00900602,y=.510512,z=.00534734,w=.859807,useTime=500},
+      {x=-.00295394,y=.531392,z=.00185299,w=.847119,useTime=2000},
+      {x=-.00295394,y=.531392,z=.00185299,w=.847119,useTime=5000},
+   },
+}
+smart_camera_config[33]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       7000,
+   },
+   [SMART_POS]=
+   {
+      {x=303.295,y=361.411,z=305.479,useTime=0,accelPercent=0},
+      {x=315.315,y=373.937,z=323.045,useTime=7000,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.0514789,y=-.941692,z=.169437,w=.286108,useTime=0},
+      {x=.0514789,y=-.941692,z=.169437,w=.286108,useTime=7000},
+   },
+}
+smart_camera_config[34]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       2000,
+       1500,
+   },
+   [SMART_POS]=
+   {
+      {x=71.1259,y=301.149,z=596.524,useTime=0,accelPercent=0},
+      {x=72.604,y=304.71,z=613.145,useTime=2000,accelPercent=0},
+      {x=72.604,y=304.71,z=613.145,useTime=1500,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.00415216,y=-.995823,z=.060906,w=.0678886,useTime=0},
+      {x=.00415216,y=-.995823,z=.060906,w=.0678886,useTime=2000},
+      {x=.00415216,y=-.995823,z=.060906,w=.0678886,useTime=1500},
+   },
+   [COLOR_CORRECTION_EFFECT]=
+   {
+       EMPTY,
+       EMPTY,
+       EMPTY,
+   },
+}
+smart_camera_config[35]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       1500,
+       500,
+       0,
+       1200,
+       0,
+       300,
+       0,
+       1000,
+       500,
+       0,
+       1000,
+       300,
+       0,
+       3500,
+       1000,
+   },
+   [SMART_POS]=
+   {
+      {x=-257.684,y=384.539,z=163.57,useTime=0,accelPercent=0},
+      {x=-257.684,y=386.466,z=163.57,useTime=1500,accelPercent=0},
+      {x=-257.684,y=387.556,z=163.57,useTime=500,accelPercent=0},
+      {x=-257.684,y=387.556,z=163.57,useTime=0,accelPercent=0},
+      {x=-257.684,y=390.423,z=163.57,useTime=1200,accelPercent=0},
+      {x=-257.684,y=390.623,z=163.57,useTime=0,accelPercent=0},
+      {x=-257.684,y=390.623,z=163.57,useTime=300,accelPercent=0},
+      {x=-241.083,y=423.799,z=95.5825,useTime=0,accelPercent=0},
+      {x=-241.872,y=423.31,z=96.983,useTime=1000,accelPercent=0},
+      {x=-242.287,y=423.053,z=97.72,useTime=500,accelPercent=0},
+      {x=-242.329,y=423.027,z=97.7937,useTime=0,accelPercent=0},
+      {x=-243.118,y=422.538,z=99.1942,useTime=1000,accelPercent=0},
+      {x=-243.118,y=422.538,z=99.1942,useTime=300,accelPercent=0},
+      {x=-286.325,y=413.512,z=163.985,useTime=0,accelPercent=0},
+      {x=-302.02,y=400.901,z=172.038,useTime=3500,accelPercent=1},
+      {x=-302.02,y=400.901,z=172.038,useTime=1000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.0843962,y=.88198,z=-.173037,w=.430171,useTime=0},
+      {x=.0843962,y=.88198,z=-.173037,w=.430171,useTime=1500},
+      {x=.0843962,y=.88198,z=-.173037,w=.430171,useTime=500},
+      {x=.0843962,y=.88198,z=-.173037,w=.430171,useTime=0},
+      {x=.0843962,y=.88198,z=-.173037,w=.430171,useTime=1200},
+      {x=.0843959,y=.88198,z=-.173037,w=.430171,useTime=0},
+      {x=.0843959,y=.88198,z=-.173037,w=.430171,useTime=300},
+      {x=-.0368496,y=.958712,z=.146704,w=.240813,useTime=0},
+      {x=-.0368496,y=.958712,z=.146704,w=.240813,useTime=1000},
+      {x=-.0368496,y=.958712,z=.146704,w=.240813,useTime=500},
+      {x=-.0368496,y=.958712,z=.146704,w=.240813,useTime=0},
+      {x=-.0368496,y=.958712,z=.146704,w=.240813,useTime=1000},
+      {x=-.0368496,y=.958712,z=.146704,w=.240813,useTime=300},
+      {x=.0275542,y=.92404,z=-.0678575,w=.375216,useTime=0},
+      {x=.01179,y=-.986552,z=.0828423,w=.140404,useTime=3500},
+      {x=.01179,y=-.986552,z=.0828423,w=.140404,useTime=1000},
+   },
+   [BLOOM_EFFECT]=
+   {
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+   },
+   [RADIAL_BLUR]=
+   {
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+   },
+   [COLOR_CORRECTION_EFFECT]=
+   {
+      {factor=1,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=0},
+      {factor=0,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=1500},
+      {factor=0,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=500},
+      {factor=0,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=0},
+      {factor=1,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=1200},
+      {factor=1,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=0},
+      {factor=1,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=300},
+      {factor=1,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=0},
+      {factor=0,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=1000},
+      {factor=0,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=500},
+      {factor=0,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=0},
+      {factor=1,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=1000},
+      {factor=1,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=300},
+      {factor=1,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=0},
+      {factor=0,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccblack.dds",useTime=1000},
+       EMPTY,
+   },
+}
+smart_camera_config[36]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       750,
+       3000,
+   },
+   [SMART_POS]=
+   {
+      {x=-159.118,y=353.747,z=132.159,useTime=0,accelPercent=0},
+      {x=-153.101,y=352.807,z=146.377,useTime=750,accelPercent=-1},
+      {x=-152.84,y=352.717,z=147.017,useTime=3000,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0124238,y=-.979247,z=-.0633242,w=.192122,useTime=0},
+      {x=-.0124238,y=-.979247,z=-.0633242,w=.192122,useTime=750},
+      {x=-.0124238,y=-.979247,z=-.0633242,w=.192122,useTime=3000},
+   },
+   [BLOOM_EFFECT]=
+   {
+      {blurSize=.05,brightThreshold=0,brightScale=5,useTime=0},
+      {blurSize=.05,brightThreshold=0,brightScale=0,useTime=750},
+      {blurSize=0,brightThreshold=0,brightScale=0,useTime=3000},
+   },
+   [RADIAL_BLUR]=
+   {
+      {blurCenterX=.5,blurCenterY=.5,blurLength=.2,inFocusRadius=.2,outFocusRadius=.7,useTime=0},
+      {blurCenterX=.5,blurCenterY=.5,blurLength=0,inFocusRadius=.2,outFocusRadius=.7,useTime=750},
+      {blurCenterX=0,blurCenterY=0,blurLength=0,inFocusRadius=0,outFocusRadius=0,useTime=3000},
+   },
+   [COLOR_CORRECTION_EFFECT]=
+   {
+       EMPTY,
+       EMPTY,
+       EMPTY,
+   },
+}
+smart_camera_config[37]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       6000,
+   },
+   [SMART_POS]=
+   {
+      {x=21.5825,y=416.512,z=107.908,useTime=0,accelPercent=0},
+      {x=88.5726,y=453.612,z=188.935,useTime=6000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0727668,y=-.923578,z=-.220026,w=.305445,useTime=0},
+      {x=-.10436,y=.893379,z=.273582,w=.340788,useTime=6000},
+   },
+   [RADIAL_BLUR]=
+   {
+      {blurCenterX=.5,blurCenterY=.5,blurLength=.2,inFocusRadius=.2,outFocusRadius=.9,useTime=0},
+      {blurCenterX=.5,blurCenterY=.5,blurLength=.2,inFocusRadius=.2,outFocusRadius=.9,useTime=6000},
+   },
+   [COLOR_CORRECTION_EFFECT]=
+   {
+      {factor=1,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccwhite.dds",useTime=0},
+      {factor=0,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccwhite.dds",useTime=500},
+   },
+}
+smart_camera_config[38]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       4000,
+       0,
+       2000,
+       0,
+       2500,
+       2000,
+   },
+   [SMART_POS]=
+   {
+      {x=-143.217,y=352.57,z=129.46,useTime=0,accelPercent=0},
+      {x=-144.753,y=352.225,z=134.695,useTime=4000,accelPercent=0},
+      {x=-146.13,y=356.338,z=150.341,useTime=0,accelPercent=0},
+      {x=-146.13,y=352.531,z=150.341,useTime=2000,accelPercent=0},
+      {x=-145,y=352.375,z=147.844,useTime=0,accelPercent=0},
+      {x=-144.914,y=352.375,z=148.086,useTime=2500,accelPercent=0},
+      {x=-144.914,y=352.375,z=148.086,useTime=2000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.0579075,y=-.485263,z=.0322306,w=.871853,useTime=0},
+      {x=.0579075,y=-.485263,z=.0322306,w=.871853,useTime=4000},
+      {x=.135352,y=-.0725591,z=.00993946,w=.988087,useTime=0},
+      {x=.135352,y=-.0725591,z=.00993946,w=.988087,useTime=2000},
+      {x=0,y=.816139,z=0,w=.577855,useTime=0},
+      {x=0,y=.816139,z=0,w=.577855,useTime=2500},
+      {x=0,y=.816139,z=0,w=.577855,useTime=2000},
+   },
+}
+smart_camera_config[39]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       1000,
+       2000,
+       2000,
+       3000,
+   },
+   [SMART_POS]=
+   {
+      {x=-216.125,y=347.678,z=97.9347,useTime=1000,accelPercent=0},
+      {x=-213.436,y=357.863,z=94.2833,useTime=2000,accelPercent=0},
+      {x=-213.398,y=367.852,z=94.4038,useTime=2000,accelPercent=0},
+      {x=-211.413,y=363.086,z=110.58,useTime=3000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0557989,y=.942003,z=.198511,w=.264785,useTime=1000},
+      {x=-.0121484,y=-.967427,z=-.248393,w=.047315,useTime=2000},
+      {x=-.0381283,y=-.956574,z=-.249169,w=.146377,useTime=2000},
+      {x=-.0476106,y=-.933004,z=-.330394,w=.134448,useTime=3000},
+   },
+}
+smart_camera_config[40]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       2000,
+       4250,
+       0,
+       3000,
+   },
+   [SMART_POS]=
+   {
+      {x=-21.16,y=136.143,z=142.23,useTime=0,accelPercent=0},
+      {x=-21.16,y=136.143,z=142.23,useTime=2000,accelPercent=0},
+      {x=-17.69,y=136.154,z=138.98,useTime=4250,accelPercent=0},
+      {x=-17.96,y=135.416,z=138.78,useTime=0,accelPercent=0},
+      {x=-18.34,y=135.917,z=139.3,useTime=3000,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0112095,y=.925463,z=.0274681,w=.377675,useTime=0},
+      {x=-.0112095,y=.925463,z=.0274681,w=.377675,useTime=2000},
+      {x=-.0112095,y=.925463,z=.0274681,w=.377675,useTime=4250},
+      {x=.0087007,y=.973258,z=-.226483,w=.0373893,useTime=0},
+      {x=.0087007,y=.973258,z=-.226483,w=.0373893,useTime=3000},
+   },
+}
+smart_camera_config[41]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       2000,
+       2750,
+       0,
+       3250,
+   },
+   [SMART_POS]=
+   {
+      {x=-269.048,y=135.246,z=517.796,useTime=0,accelPercent=0},
+      {x=-269.048,y=135.246,z=517.796,useTime=2000,accelPercent=0},
+      {x=-271.494,y=135.988,z=520.868,useTime=2750,accelPercent=-1},
+      {x=-270.887,y=135.312,z=521.018,useTime=0,accelPercent=0},
+      {x=-271.394,y=136.087,z=521.242,useTime=3250,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.0303963,y=.950218,z=-.0981944,w=.294142,useTime=0},
+      {x=.0303963,y=.950218,z=-.0981944,w=.294142,useTime=2000},
+      {x=.0303963,y=.950218,z=-.0981944,w=.294142,useTime=2750},
+      {x=.115405,y=.818799,z=-.17703,w=.533769,useTime=0},
+      {x=.115405,y=.818799,z=-.17703,w=.533769,useTime=3250},
+   },
+}
+smart_camera_config[42]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       2000,
+       2000,
+       0,
+       3000,
+   },
+   [SMART_POS]=
+   {
+      {x=-13.99,y=136.503,z=135.84,useTime=0,accelPercent=0},
+      {x=-13.99,y=136.503,z=135.84,useTime=2000,accelPercent=0},
+      {x=-17.43,y=136.553,z=138.84,useTime=2000,accelPercent=-1},
+      {x=-18.23,y=136.362,z=139.61,useTime=0,accelPercent=0},
+      {x=-17.4,y=136.326,z=138.72,useTime=3000,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0876655,y=.890482,z=.194158,w=.402068,useTime=0},
+      {x=-.0876655,y=.890482,z=.194158,w=.402068,useTime=2000},
+      {x=-.0876655,y=.890482,z=.194158,w=.402068,useTime=2000},
+      {x=-.0344564,y=.867377,z=.0606542,w=.492739,useTime=0},
+      {x=-.0344564,y=.867377,z=.0606542,w=.492739,useTime=3000},
+   },
+}
+smart_camera_config[43]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       2000,
+       5000,
+       0,
+       2500,
+   },
+   [SMART_POS]=
+   {
+      {x=-14.71,y=135.728,z=136.17,useTime=0,accelPercent=0},
+      {x=-14.71,y=135.728,z=136.17,useTime=2000,accelPercent=0},
+      {x=-17.61,y=136.316,z=139.24,useTime=5000,accelPercent=-1},
+      {x=-17.96,y=136.504,z=139.56,useTime=0,accelPercent=0},
+      {x=-17.78,y=136.417,z=139.4,useTime=2500,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0246348,y=.913253,z=.0558545,w=.402794,useTime=0},
+      {x=-.0246348,y=.913253,z=.0558545,w=.402794,useTime=2000},
+      {x=-.0246348,y=.913253,z=.0558545,w=.402794,useTime=5000},
+      {x=-.0594036,y=.901857,z=.131564,w=.407205,useTime=0},
+      {x=-.0594036,y=.901857,z=.131564,w=.407205,useTime=2500},
+   },
+}
+smart_camera_config[44]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       1000,
+       1000,
+       2000,
+       3000,
+   },
+   [SMART_POS]=
+   {
+      {x=102.022,y=296.688,z=51.6938,useTime=1000,accelPercent=0},
+      {x=120.837,y=295.174,z=34.5132,useTime=1000,accelPercent=0},
+      {x=126.462,y=294.722,z=29.3775,useTime=2000,accelPercent=0},
+      {x=126.462,y=294.722,z=29.3775,useTime=1000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0271426,y=-.403368,z=-.0119713,w=.914557,useTime=1000},
+      {x=-.0271426,y=-.403368,z=-.0119713,w=.914557,useTime=1000},
+      {x=-.0271426,y=-.403368,z=-.0119713,w=.914557,useTime=2000},
+      {x=-.0271426,y=-.403368,z=-.0119713,w=.914557,useTime=1000},
+   },
+}
+smart_camera_config[45]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       500,
+       4000,
+       2000,
+       1000,
+       2000,
+   },
+   [SMART_POS]=
+   {
+      {x=17.9946,y=320.469,z=350.111,useTime=500,accelPercent=0},
+      {x=1.73385,y=313.644,z=347.543,useTime=4000,accelPercent=0},
+      {x=1.82107,y=313.644,z=361.991,useTime=2000,accelPercent=0},
+      {x=-14.2974,y=305.094,z=361.385,useTime=1000,accelPercent=0},
+      {x=-14.2974,y=305.094,z=361.385,useTime=2000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.147445,y=.695008,z=.148997,w=.687768,useTime=500},
+      {x=-.144442,y=.641415,z=.124678,w=.743087,useTime=4000},
+      {x=-.136864,y=.696056,z=.137823,w=.691215,useTime=2000},
+      {x=-.19109,y=.665177,z=.181972,w=.698506,useTime=1000},
+      {x=-.19109,y=.665177,z=.181972,w=.698506,useTime=2000},
+   },
+}
+smart_camera_config[46]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       3000,
+       0,
+       2500,
+   },
+   [SMART_POS]=
+   {
+      {x=615.46,y=206.981,z=-1282.44,useTime=0,accelPercent=0},
+      {x=608.978,y=206.493,z=-1281.82,useTime=3000,accelPercent=0},
+      {x=606.452,y=205.069,z=-1272.49,useTime=0,accelPercent=0},
+      {x=605.789,y=204.863,z=-1271.18,useTime=2500,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0228495,y=.84612,z=.0363918,w=.531258,useTime=0},
+      {x=-.00860704,y=.97867,z=.0526214,w=.198397,useTime=3000},
+      {x=-.00864445,y=.981475,z=.045646,w=.185872,useTime=0},
+      {x=-.00864445,y=.981475,z=.045646,w=.185872,useTime=2500},
+   },
+}
+smart_camera_config[47]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       3000,
+       0,
+       2500,
+   },
+   [SMART_POS]=
+   {
+      {x=661.128,y=208.399,z=-1238.96,useTime=0,accelPercent=0},
+      {x=657.019,y=206.065,z=-1230.5,useTime=3000,accelPercent=0},
+      {x=653.468,y=203.845,z=-1229.27,useTime=0,accelPercent=0},
+      {x=651.171,y=204.128,z=-1228.82,useTime=2500,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0101101,y=.962956,z=.0364638,w=.266992,useTime=0},
+      {x=-.0388309,y=.810758,z=.0493757,w=.582001,useTime=3000},
+      {x=.021777,y=.809012,z=-.0300328,w=.586621,useTime=0},
+      {x=.021777,y=.809012,z=-.0300328,w=.586621,useTime=2500},
+   },
+}
+smart_camera_config[48]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       5000,
+       1000,
+   },
+   [SMART_POS]=
+   {
+      {x=163.94,y=450.5,z=466.483,useTime=0,accelPercent=0},
+      {x=183.255,y=454.271,z=467.27,useTime=5000,accelPercent=1},
+      {x=183.255,y=454.271,z=467.27,useTime=1000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.145041,y=-.695528,z=-.14657,w=.688274,useTime=0},
+      {x=.187641,y=-.686134,z=.190282,w=.676611,useTime=5000},
+      {x=.187641,y=-.686134,z=.190282,w=.676611,useTime=1000},
+   },
+}
+smart_camera_config[49]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       5000,
+       1000,
+   },
+   [SMART_POS]=
+   {
+      {x=272.295,y=450.913,z=469.098,useTime=0,accelPercent=0},
+      {x=254.165,y=457.415,z=469.196,useTime=5000,accelPercent=1},
+      {x=254.165,y=457.415,z=469.196,useTime=1000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.173891,y=.698089,z=.181028,w=.670568,useTime=0},
+      {x=.112107,y=.708186,z=-.115492,w=.687434,useTime=5000},
+      {x=.112107,y=.708186,z=-.115492,w=.687434,useTime=1000},
+   },
+}
+smart_camera_config[50]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       3500,
+       3500,
+       1000,
+   },
+   [SMART_POS]=
+   {
+      {x=-64.1002,y=368.185,z=-220.864,useTime=0,accelPercent=0},
+      {x=-43.075,y=369.522,z=-242.959,useTime=3500,accelPercent=0},
+      {x=51.1415,y=332.383,z=-231.827,useTime=3500,accelPercent=0},
+      {x=51.1415,y=332.383,z=-231.827,useTime=1000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.0410457,y=-.425348,z=.019315,w=.903892,useTime=0},
+      {x=.133107,y=-.671814,z=-.259055,w=.681057,useTime=3500},
+      {x=-.0161265,y=-.703218,z=-.0159587,w=.710612,useTime=3500},
+      {x=-.0161265,y=-.703218,z=-.0159587,w=.710612,useTime=1000},
+   },
+   [MOTION_BLUR]=
+   {
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+   },
+}
+smart_camera_config[51]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       1000,
+       750,
+       2500,
+   },
+   [SMART_POS]=
+   {
+      {x=193.537,y=348.846,z=-219.899,useTime=1000,accelPercent=0},
+      {x=194.704,y=355.351,z=-204.623,useTime=750,accelPercent=-1},
+      {x=194.538,y=354.756,z=-207.8,useTime=2500,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.00261675,y=-.996578,z=.0749335,w=.0348015,useTime=1000},
+      {x=.00261675,y=-.996578,z=.0749335,w=.0348015,useTime=750},
+      {x=.00261675,y=-.996578,z=.0749335,w=.0348015,useTime=2500},
+   },
+   [MOTION_BLUR]=
+   {
+      {blurMax=.05,blurScale=.08,blurScalePosition=3,blurScaleRotation=10,inFocusDistance=15,outFocusDistance=80,useTime=1000},
+      {blurMax=.05,blurScale=.08,blurScalePosition=3,blurScaleRotation=10,inFocusDistance=15,outFocusDistance=80,useTime=750},
+      {blurMax=.05,blurScale=.08,blurScalePosition=3,blurScaleRotation=10,inFocusDistance=15,outFocusDistance=80,useTime=2500},
+   },
+}
+smart_camera_config[52]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       5000,
+       1000,
+   },
+   [SMART_POS]=
+   {
+      {x=-207.068,y=342.93,z=-391.291,useTime=0,accelPercent=0},
+      {x=-239.236,y=340.903,z=-373.699,useTime=5000,accelPercent=-1},
+      {x=-239.236,y=340.903,z=-373.699,useTime=1000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0280458,y=-.325424,z=-.00965692,w=.945103,useTime=0},
+      {x=-.0418606,y=.0226688,z=.000950005,w=.998866,useTime=5000},
+      {x=-.0418606,y=.0226688,z=.000950005,w=.998866,useTime=1000},
+   },
+   [BLOOM_EFFECT]=
+   {
+       EMPTY,
+       EMPTY,
+       EMPTY,
+   },
+   [RADIAL_BLUR]=
+   {
+       EMPTY,
+       EMPTY,
+       EMPTY,
+   },
+}
+smart_camera_config[53]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       1000,
+       2000,
+       0,
+       5000,
+   },
+   [SMART_POS]=
+   {
+      {x=-416.693,y=314.789,z=256.316,useTime=0,accelPercent=0},
+      {x=-429.425,y=315.113,z=268.554,useTime=1000,accelPercent=-1},
+      {x=-429.718,y=315.12,z=268.836,useTime=2000,accelPercent=-1},
+      {x=-433.969,y=315.588,z=280.421,useTime=0,accelPercent=0},
+      {x=-434.356,y=315.479,z=281.778,useTime=5000,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.0103552,y=.949452,z=-.031496,w=.312158,useTime=0},
+      {x=.0103552,y=.949452,z=-.031496,w=.312158,useTime=1000},
+      {x=.0103552,y=.949452,z=-.031496,w=.312158,useTime=2000},
+      {x=-.0545618,y=.766593,z=.0657212,w=.636426,useTime=0},
+      {x=-.0545618,y=.766593,z=.0657212,w=.636426,useTime=5000},
+   },
+   [BLOOM_EFFECT]=
+   {
+      {blurSize=.05,brightThreshold=0,brightScale=5,useTime=0},
+      {blurSize=.05,brightThreshold=0,brightScale=0,useTime=1000},
+      {blurSize=0,brightThreshold=0,brightScale=0,useTime=2000},
+      {blurSize=0,brightThreshold=0,brightScale=0,useTime=0},
+      {blurSize=0,brightThreshold=0,brightScale=0,useTime=5000},
+   },
+   [RADIAL_BLUR]=
+   {
+      {blurCenterX=.5,blurCenterY=.5,blurLength=.3,inFocusRadius=.2,outFocusRadius=.7,useTime=0},
+      {blurCenterX=.5,blurCenterY=.5,blurLength=0,inFocusRadius=.2,outFocusRadius=.7,useTime=1000},
+      {blurCenterX=0,blurCenterY=0,blurLength=0,inFocusRadius=0,outFocusRadius=0,useTime=2000},
+      {blurCenterX=0,blurCenterY=0,blurLength=0,inFocusRadius=0,outFocusRadius=0,useTime=0},
+      {blurCenterX=0,blurCenterY=0,blurLength=0,inFocusRadius=0,outFocusRadius=0,useTime=5000},
+   },
+}
+smart_camera_config[54]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       3000,
+       0,
+       500,
+       7500,
+   },
+   [SMART_POS]=
+   {
+      {x=-141.72,y=352.79,z=123.747,useTime=0,accelPercent=0},
+      {x=-138.714,y=352.537,z=125.034,useTime=3000,accelPercent=-.5},
+      {x=-114.944,y=358.258,z=108.585,useTime=0,accelPercent=0},
+      {x=-133.739,y=356.333,z=127.623,useTime=500,accelPercent=-1},
+      {x=-139.144,y=355.448,z=137.683,useTime=7500,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.00307321,y=.980541,z=-.0153993,w=.195684,useTime=0},
+      {x=.0028291,y=.962705,z=-.0100742,w=.270352,useTime=3000},
+      {x=-.0760879,y=.885243,z=.1561,w=.431496,useTime=0},
+      {x=-.0760879,y=.885243,z=.1561,w=.431496,useTime=500},
+      {x=-.0760879,y=.885243,z=.1561,w=.431496,useTime=7500},
+   },
+   [BLOOM_EFFECT]=
+   {
+      {blurSize=0,brightThreshold=0,brightScale=0,useTime=0},
+      {blurSize=0,brightThreshold=0,brightScale=0,useTime=3000},
+      {blurSize=.05,brightThreshold=0,brightScale=5,useTime=0},
+      {blurSize=.05,brightThreshold=0,brightScale=0,useTime=500},
+      {blurSize=0,brightThreshold=0,brightScale=0,useTime=7500},
+   },
+   [RADIAL_BLUR]=
+   {
+      {blurCenterX=0,blurCenterY=0,blurLength=0,inFocusRadius=0,outFocusRadius=0,useTime=0},
+      {blurCenterX=0,blurCenterY=0,blurLength=0,inFocusRadius=0,outFocusRadius=0,useTime=3000},
+      {blurCenterX=.5,blurCenterY=.5,blurLength=.3,inFocusRadius=.2,outFocusRadius=.7,useTime=0},
+      {blurCenterX=.5,blurCenterY=.5,blurLength=0,inFocusRadius=.2,outFocusRadius=.7,useTime=500},
+      {blurCenterX=0,blurCenterY=0,blurLength=0,inFocusRadius=0,outFocusRadius=0,useTime=7500},
+   },
+}
+smart_camera_config[55]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       2000,
+       2000,
+   },
+   [SMART_POS]=
+   {
+      {x=177.913,y=305.575,z=272.405,useTime=0,accelPercent=0},
+      {x=202.613,y=305.762,z=217.491,useTime=2000,accelPercent=1},
+      {x=202.613,y=305.762,z=217.491,useTime=2000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.129288,y=-.136269,z=-.0179402,w=.982035,useTime=0},
+      {x=-.129288,y=-.136269,z=-.0179402,w=.982035,useTime=2000},
+      {x=-.129288,y=-.136269,z=-.0179402,w=.982035,useTime=2000},
+   },
+   [BLOOM_EFFECT]=
+   {
+       EMPTY,
+       EMPTY,
+       EMPTY,
+   },
+}
+smart_camera_config[56]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       500,
+       3000,
+       1000,
+   },
+   [SMART_POS]=
+   {
+      {x=116.92,y=432.027,z=315.456,useTime=0,accelPercent=0},
+      {x=116.92,y=432.027,z=315.456,useTime=500,accelPercent=0},
+      {x=120.381,y=431.455,z=313.506,useTime=3000,accelPercent=-1},
+      {x=120.381,y=431.455,z=313.506,useTime=1000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0888196,y=.718139,z=.0932694,w=.683877,useTime=0},
+      {x=-.0767502,y=-.502533,z=-.0448496,w=.859976,useTime=500},
+      {x=-.0767502,y=-.502533,z=-.0448496,w=.859976,useTime=3000},
+      {x=-.0767502,y=-.502533,z=-.0448496,w=.859976,useTime=1000},
+   },
+   [BLOOM_EFFECT]=
+   {
+      {blurSize=.05,brightThreshold=0,brightScale=0,useTime=0},
+      {blurSize=.05,brightThreshold=0,brightScale=5,useTime=500},
+      {blurSize=.05,brightThreshold=0,brightScale=0,useTime=3000},
+      {blurSize=.05,brightThreshold=0,brightScale=0,useTime=1000},
+   },
+   [RADIAL_BLUR]=
+   {
+       EMPTY,
+       EMPTY,
+       EMPTY,
+       EMPTY,
+   },
+}
+smart_camera_config[57]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       500,
+       2500,
+       0,
+       4000,
+   },
+   [SMART_POS]=
+   {
+      {x=-488.32,y=369.726,z=5.10482,useTime=0,accelPercent=0},
+      {x=-483.242,y=370.02,z=12.7793,useTime=500,accelPercent=-1},
+      {x=-482.816,y=370.111,z=13.4031,useTime=2500,accelPercent=-1},
+      {x=-482.442,y=370.417,z=15.6136,useTime=0,accelPercent=0},
+      {x=-482.441,y=370.391,z=14.724,useTime=4000,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.0144254,y=-.959944,z=.0503071,w=.27526,useTime=0},
+      {x=.0144254,y=-.959944,z=.0503071,w=.27526,useTime=500},
+      {x=.0144252,y=-.959944,z=.0503065,w=.27526,useTime=2500},
+      {x=.0492097,y=-.764909,z=.058855,w=.639554,useTime=0},
+      {x=.0492097,y=-.764909,z=.058855,w=.639554,useTime=4000},
+   },
+   [BLOOM_EFFECT]=
+   {
+      {blurSize=.05,brightThreshold=0,brightScale=5,useTime=0},
+      {blurSize=.05,brightThreshold=0,brightScale=0,useTime=500},
+      {blurSize=0,brightThreshold=0,brightScale=0,useTime=2500},
+      {blurSize=0,brightThreshold=0,brightScale=0,useTime=0},
+      {blurSize=0,brightThreshold=0,brightScale=0,useTime=4000},
+   },
+   [RADIAL_BLUR]=
+   {
+      {blurCenterX=.5,blurCenterY=.5,blurLength=.2,inFocusRadius=.2,outFocusRadius=.2,useTime=0},
+      {blurCenterX=.5,blurCenterY=.5,blurLength=0,inFocusRadius=.7,outFocusRadius=.7,useTime=500},
+      {blurCenterX=0,blurCenterY=0,blurLength=0,inFocusRadius=0,outFocusRadius=0,useTime=1500},
+      {blurCenterX=0,blurCenterY=0,blurLength=0,inFocusRadius=0,outFocusRadius=0,useTime=0},
+      {blurCenterX=0,blurCenterY=0,blurLength=0,inFocusRadius=0,outFocusRadius=0,useTime=4000},
+   },
+}
+smart_camera_config[58]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       900,
+       0,
+       7000,
+       1000,
+	   0,
+	   2000,
+	   0,
+	   3000,
+   },
+   [SMART_POS]=
+   {
+      {x=-300.87,y=400.838,z=162.845,useTime=0,accelPercent=0},
+      {x=-300.968,y=399.977,z=171.967,useTime=900,accelPercent=0},
+      {x=-300.215,y=400.789,z=168.276,useTime=0,accelPercent=0},
+      {x=-305.507,y=403.443,z=177.732,useTime=7000,accelPercent=-1},
+      {x=-305.507,y=403.443,z=177.732,useTime=1000,accelPercent=0},
+	  {x=-307.899,y=400.396,z=173.214,useTime=0,accelPercent=0},
+	  {x=-308.093,y=400.394,z=171.867,useTime=2000,accelPercent=0},
+	  {x=-306.988,y=400.603,z=166.455,useTime=0,accelPercent=0},
+	  {x=-306.747,y=400.612,z=165.085,useTime=3000,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.196041,y=-.17522,z=.0356274,w=.964156,useTime=0},
+      {x=.196041,y=-.17522,z=.0356274,w=.964156,useTime=900},
+      {x=-.234473,y=-.35623,z=-.0928355,w=.899724,useTime=0},
+      {x=-.247234,y=-.259893,z=-.0684186,w=.93094,useTime=7000},
+	  {x=-.247228,y=-.259899,z=-.0684403,w=.930939,useTime=1000},
+      {x=.0545789,y=.0712392,z=-.00373164,w=.995958,useTime=0},
+	  {x=.0545789,y=.0712392,z=-.00373164,w=.995958,useTime=2000},
+	  {x=.0161622,y=.579051,z=-.0114824,w=.81505,useTime=0},
+	  {x=.0161622,y=.579051,z=-.0114824,w=.81505,useTime=3000},
+   },
+}
+smart_camera_config[59]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       500,
+       1000,
+       2000,
+   },
+   [SMART_POS]=
+   {
+      {x=340.275,y=375.854,z=356.722,useTime=500,accelPercent=0},
+      {x=345.209,y=377.551,z=363.175,useTime=1000,accelPercent=0},
+      {x=345.209,y=377.551,z=363.175,useTime=2000,accelPercent=0},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=.0329565,y=-.942193,z=.0973658,w=.318915,useTime=500},
+      {x=.0329565,y=-.942193,z=.0973658,w=.318915,useTime=1000},
+      {x=.0329565,y=-.942193,z=.0973658,w=.318915,useTime=2000},
+   },
+   [BLOOM_EFFECT]=
+   {
+       EMPTY,
+       EMPTY,
+       EMPTY,
+   },
+   [RADIAL_BLUR]=
+   {
+       EMPTY,
+       EMPTY,
+       EMPTY,
+   },
+   [COLOR_CORRECTION_EFFECT]=
+   {
+       EMPTY,
+       EMPTY,
+       EMPTY,
+   },
+}
+smart_camera_config[60]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       2500,
+       1250,
+       1250,
+       5000,
+   },
+   [SMART_POS]=
+   {
+      {x=167.299,y=387.085,z=425.729,useTime=0,accelPercent=0},
+      {x=54.021,y=388.333,z=416.72,useTime=2500,accelPercent=-1},
+      {x=53.8211,y=387.753,z=416.81,useTime=1250,accelPercent=1},
+      {x=53.6373,y=387.221,z=416.893,useTime=1250,accelPercent=-1},
+      {x=52.7944,y=387.523,z=416.828,useTime=5000,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.00126666,y=.679442,z=.00117295,w=.733728,useTime=0},
+      {x=-.00126666,y=.679442,z=.00117295,w=.733728,useTime=2500},
+      {x=-.00126666,y=.679442,z=.00117295,w=.733728,useTime=1250},
+      {x=-.00126666,y=.679442,z=.00117295,w=.733728,useTime=1250},
+      {x=-.00126666,y=.679442,z=.00117295,w=.733728,useTime=5000},
+   },
+   [BLOOM_EFFECT]=
+   {
+      {blurSize=.05,brightThreshold=0,brightScale=5,useTime=0},
+      {blurSize=.05,brightThreshold=0,brightScale=0,useTime=2500},
+      {blurSize=0,brightThreshold=0,brightScale=0,useTime=1250},
+      {blurSize=0,brightThreshold=0,brightScale=0,useTime=1250},
+      {blurSize=0,brightThreshold=0,brightScale=0,useTime=5000},
+   },
+   [RADIAL_BLUR]=
+   {
+      {blurCenterX=.5,blurCenterY=.5,blurLength=.3,inFocusRadius=.2,outFocusRadius=.7,useTime=0},
+      {blurCenterX=.5,blurCenterY=.5,blurLength=0,inFocusRadius=.2,outFocusRadius=.7,useTime=2500},
+      {blurCenterX=0,blurCenterY=0,blurLength=0,inFocusRadius=0,outFocusRadius=0,useTime=1250},
+      {blurCenterX=0,blurCenterY=0,blurLength=0,inFocusRadius=0,outFocusRadius=0,useTime=1250},
+      {blurCenterX=0,blurCenterY=0,blurLength=0,inFocusRadius=0,outFocusRadius=0,useTime=5000},
+   },
+   [COLOR_CORRECTION_EFFECT]=
+   {
+      {factor=0,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccshenhui.dds",useTime=0},
+      {factor=0,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccshenhui.dds",useTime=2500},
+      {factor=1,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccshenhui.dds",useTime=1250},
+      {factor=0,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccshenhui.dds",useTime=1250},
+      {factor=0,startTexture="Shaders\\Textures\\ccdefault.dds",endTexture="textures\\colormaping\\ccshenhui.dds",useTime=5000},
+   },
+}
+smart_camera_config[61]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       1000,
+       2000,
+   },
+   [SMART_POS]=
+   {
+      {x=810.318,y=403.003,z=767.912,useTime=1000,accelPercent=0},
+      {x=811.776,y=402.097,z=769.613,useTime=2000,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.0661975,y=-.920659,z=-.178958,w=.340556,useTime=1000},
+      {x=-.0661975,y=-.920659,z=-.178958,w=.340556,useTime=2000},
+   },
+}
+smart_camera_config[62]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       3000,
+   },
+   [SMART_POS]=
+   {
+      {x=-688.052,y=917.017,z=825.822,useTime=0,accelPercent=0},
+      {x=-684.023,y=914.927,z=829.4,useTime=3000,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.080322,y=-.89444,z=-.178726,w=.401975,useTime=0},
+      {x=-.080322,y=-.89444,z=-.178726,w=.401975,useTime=3000},
+   },
+}
+smart_camera_config[63]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       1000,
+       2500,
+   },
+   [SMART_POS]=
+   {
+      {x=512.348,y=426.791,z=101.473,useTime=1000,accelPercent=0},
+      {x=515.943,y=425.827,z=101.16,useTime=2500,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.095916,y=-.669988,z=-.0879249,w=.73088,useTime=1000},
+      {x=-.095916,y=-.669988,z=-.0879249,w=.73088,useTime=2500},
+   },
+}
+smart_camera_config[64]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       4000,
+   },
+   [SMART_POS]=
+   {
+      {x=888.468,y=432.88,z=412.685,useTime=0,accelPercent=0},
+      {x=880.715,y=434.271,z=410.774,useTime=4000,accelPercent=-1},
+   },
+   [SMART_ROTATE]=
+   {
+      {x=-.155171,y=.604624,z=.12157,w=.771734,useTime=0},
+      {x=-.155171,y=.604624,z=.12157,w=.771734,useTime=4000},
+   },
+   [MOTION_BLUR]=
+   {
+       EMPTY,
+       EMPTY,
+   },
+}
+smart_camera_config[65]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       450,
+       800,
+       4750,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-152.456,y=354.038,z=146.5,useTime=0,accelPercent=0},
+      {x=-150.435,y=356.837,z=142.051,useTime=0,accelPercent=0},
+      {x=-150.435,y=356.414,z=142.051,useTime=450,accelPercent=-1},
+      {x=-151.25,y=354.334,z=145.37,useTime=800,accelPercent=-1},
+      {x=-148.444,y=362.888,z=145.276,useTime=4750,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=-.997922,z=0,w=.0644327,useTime=0},
+      {x=-.0366068,y=.963136,z=.199456,w=.176768,useTime=0},
+      {x=-.0366068,y=.963136,z=.199456,w=.176768,useTime=450},
+      {x=.0128324,y=.985608,z=-.0879633,w=.143784,useTime=800},
+      {x=.0330215,y=.890189,z=-.0653717,w=.449666,useTime=4750},
+   },
+   [MOTION_BLUR]=
+   {
+      {blurMax=0,blurScale=0,blurScalePosition=0,blurScaleRotation=0,inFocusDistance=0,outFocusDistance=0,useTime=0},
+      {blurMax=0,blurScale=0,blurScalePosition=0,blurScaleRotation=0,inFocusDistance=0,outFocusDistance=0,useTime=0},
+      {blurMax=0,blurScale=0,blurScalePosition=0,blurScaleRotation=0,inFocusDistance=0,outFocusDistance=0,useTime=450},
+      {blurMax=.05,blurScale=.2,blurScalePosition=3,blurScaleRotation=10,inFocusDistance=0,outFocusDistance=80,useTime=800},
+      {blurMax=.05,blurScale=1,blurScalePosition=3,blurScaleRotation=10,inFocusDistance=0,outFocusDistance=80,useTime=4750},
+   },
+}
+smart_camera_config[66]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       0,
+       1000,
+       0,
+       3000,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.306,y=351.14,z=149.897,useTime=0,accelPercent=0},
+      {x=-152.341,y=352.346,z=149.221,useTime=0,accelPercent=0},
+      {x=-151.295,y=353.706,z=148.605,useTime=0,accelPercent=0},
+      {x=-151.417,y=352.388,z=138.337,useTime=1000,accelPercent=0},
+      {x=-151.417,y=352.388,z=138.337,useTime=0,accelPercent=0},
+      {x=-151.413,y=352.424,z=137.704,useTime=3000,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.0713038,y=-.897569,z=-.158333,w=.405236,useTime=0},
+      {x=-.0000989028,y=.999585,z=.0286091,w=.0034556,useTime=0},
+      {x=-.0000989028,y=.999585,z=.0286091,w=.0034556,useTime=1000},
+      {x=-.0000987765,y=.999585,z=.0286081,w=.00345131,useTime=0},
+      {x=-.0000987765,y=.999585,z=.0286081,w=.00345131,useTime=3000},
+   },
+}
+smart_camera_config[67]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       0,
+       1000,
+       0,
+       5000,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.306,y=351.14,z=149.897,useTime=0,accelPercent=0},
+      {x=-152.341,y=352.346,z=149.221,useTime=0,accelPercent=0},
+      {x=-151.295,y=353.706,z=148.605,useTime=0,accelPercent=0},
+      {x=-151.417,y=352.388,z=138.337,useTime=1000,accelPercent=0},
+      {x=-151.417,y=352.388,z=138.337,useTime=0,accelPercent=0},
+      {x=-151.413,y=352.424,z=137.704,useTime=5000,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-.0713038,y=-.897569,z=-.158333,w=.405236,useTime=0},
+      {x=-.0000989028,y=.999585,z=.0286091,w=.0034556,useTime=0},
+      {x=-.0000989028,y=.999585,z=.0286091,w=.0034556,useTime=1000},
+      {x=-.0000987765,y=.999585,z=.0286081,w=.00345131,useTime=0},
+      {x=-.0000987765,y=.999585,z=.0286081,w=.00345131,useTime=5000},
+   },
+}
+smart_camera_config[68]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       1500,
+       0,
+       1750,
+	   1200,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.459,y=353.862,z=149,useTime=0,accelPercent=0},
+      {x=-150.694,y=355.279,z=146.873,useTime=0,accelPercent=0},
+      {x=-152.068,y=354.803,z=146.796,useTime=1500,accelPercent=0},
+      {x=-151.468,y=355.058,z=146.744,useTime=0,accelPercent=0},
+      {x=-151.583,y=354.811,z=143.411,useTime=1750,accelPercent=-1},
+	  {x=-151.583,y=354.811,z=143.411,useTime=1200,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-0.0434828,y=0.930493,z=0.117549,w=0.3442,useTime=0},
+      {x=0.0179846,y=-0.929941,z=0.0454187,w=0.36445,useTime=1500},
+      {x=-0.000870808,y=-0.998786,z=-0.0191767,w=0.0453545,useTime=0},
+      {x=0.00411655,y=-0.995822,z=0.0587097,w=0.0698241,useTime=1750},
+	  {x=0.00411655,y=-0.995822,z=0.0587097,w=0.0698241,useTime=1200},
+   },
+}
+smart_camera_config[69]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       2500,
+       0,
+       750,
+	   1200,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151,y=352.9,z=149,useTime=0,accelPercent=0},
+      {x=-150.694,y=355.279,z=146.873,useTime=0,accelPercent=0},
+      {x=-152.068,y=354.803,z=146.796,useTime=2500,accelPercent=0},
+      {x=-151.468,y=355.058,z=146.744,useTime=0,accelPercent=0},
+      {x=-151.583,y=354.811,z=143.411,useTime=750,accelPercent=-1},
+	  {x=-151.583,y=354.811,z=143.411,useTime=1200,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-0.0434828,y=0.930493,z=0.117549,w=0.3442,useTime=0},
+      {x=0.0179846,y=-0.929941,z=0.0454187,w=0.36445,useTime=2500},
+      {x=-0.000870808,y=-0.998786,z=-0.0191767,w=0.0453545,useTime=0},
+      {x=0.00411655,y=-0.995822,z=0.0587097,w=0.0698241,useTime=750},
+	  {x=0.00411655,y=-0.995822,z=0.0587097,w=0.0698241,useTime=1200},
+   },
+}
+
+smart_camera_config[70]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       1500,
+       0,
+       1750,
+	   1200,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151,y=352.9,z=149,useTime=0,accelPercent=0},
+      {x=-150.694,y=355.279,z=146.873,useTime=0,accelPercent=0},
+      {x=-152.068,y=354.803,z=146.796,useTime=1500,accelPercent=0},
+      {x=-151.468,y=355.058,z=146.744,useTime=0,accelPercent=0},
+      {x=-151.583,y=354.811,z=143.411,useTime=1750,accelPercent=-1},
+	  {x=-151.583,y=354.811,z=143.411,useTime=1200,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-0.0434828,y=0.930493,z=0.117549,w=0.3442,useTime=0},
+      {x=0.0179846,y=-0.929941,z=0.0454187,w=0.36445,useTime=1500},
+      {x=-0.000870808,y=-0.998786,z=-0.0191767,w=0.0453545,useTime=0},
+      {x=0.00411655,y=-0.995822,z=0.0587097,w=0.0698241,useTime=1750},
+	  {x=0.00411655,y=-0.995822,z=0.0587097,w=0.0698241,useTime=1200},
+   },
+}
+smart_camera_config[71]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       1500,
+       0,
+       1750,
+	   1200,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.459,y=353.862,z=149,useTime=0,accelPercent=0},
+      {x=-150.694,y=355.279,z=146.873,useTime=0,accelPercent=0},
+      {x=-152.068,y=354.803,z=146.796,useTime=1500,accelPercent=0},
+      {x=-151.468,y=355.058,z=146.744,useTime=0,accelPercent=0},
+      {x=-151.583,y=354.811,z=143.411,useTime=1750,accelPercent=-1},
+	  {x=-151.583,y=354.811,z=143.411,useTime=1200,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-0.0434828,y=0.930493,z=0.117549,w=0.3442,useTime=0},
+      {x=0.0179846,y=-0.929941,z=0.0454187,w=0.36445,useTime=1500},
+      {x=-0.000870808,y=-0.998786,z=-0.0191767,w=0.0453545,useTime=0},
+      {x=0.00411655,y=-0.995822,z=0.0587097,w=0.0698241,useTime=1750},
+	  {x=0.00411655,y=-0.995822,z=0.0587097,w=0.0698241,useTime=1200},
+   },
+}
+
+smart_camera_config[72]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       1500,
+       0,
+       1750,
+	   2200,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151,y=352.9,z=149,useTime=0,accelPercent=0},
+      {x=-150.694,y=355.279,z=146.873,useTime=0,accelPercent=0},
+      {x=-152.068,y=354.803,z=146.796,useTime=1500,accelPercent=0},
+      {x=-151.468,y=355.058,z=146.744,useTime=0,accelPercent=0},
+      {x=-151.583,y=354.811,z=140.411,useTime=1750,accelPercent=-1},
+	  {x=-151.583,y=354.811,z=140.411,useTime=2200,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-0.0434828,y=0.930493,z=0.117549,w=0.3442,useTime=0},
+      {x=0.0179846,y=-0.929941,z=0.0454187,w=0.36445,useTime=1500},
+      {x=-0.000870808,y=-0.998786,z=-0.0191767,w=0.0453545,useTime=0},
+      {x=0.00411655,y=-0.995822,z=0.0587097,w=0.0698241,useTime=1750},
+	  {x=0.00411655,y=-0.995822,z=0.0587097,w=0.0698241,useTime=2200},
+   },
+}
+
+smart_camera_config[73]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       1000,
+       0,
+       1750,
+	   1500,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151.459,y=353.862,z=149,useTime=0,accelPercent=0},
+      {x=-150.694,y=355.279,z=146.873,useTime=0,accelPercent=0},
+      {x=-152.068,y=354.803,z=146.796,useTime=1000,accelPercent=0},
+      {x=-151.468,y=355.058,z=146.744,useTime=0,accelPercent=0},
+      {x=-151.583,y=354.811,z=138.411,useTime=1750,accelPercent=-1},
+	  {x=-151.583,y=354.811,z=138.411,useTime=1500,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-0.0434828,y=0.930493,z=0.117549,w=0.3442,useTime=0},
+      {x=0.0179846,y=-0.929941,z=0.0454187,w=0.36445,useTime=1000},
+      {x=-0.000870808,y=-0.998786,z=-0.0191767,w=0.0453545,useTime=0},
+      {x=0.00411655,y=-0.995822,z=0.0587097,w=0.0698241,useTime=1750},
+	  {x=0.00411655,y=-0.995822,z=0.0587097,w=0.0698241,useTime=1500},
+   },
+}
+smart_camera_config[74]=
+{
+   [KEY_FRAMES_LIST]=
+   {
+       0,
+       0,
+       1500,
+       0,
+       1750,
+	   1200,
+   },
+   [SMART_POS_RELATIVE]=
+   {
+      {x=-151,y=352.9,z=149,useTime=0,accelPercent=0},
+      {x=-150.694,y=355.279,z=146.873,useTime=0,accelPercent=0},
+      {x=-152.068,y=354.803,z=146.796,useTime=1500,accelPercent=0},
+      {x=-151.468,y=355.058,z=146.744,useTime=0,accelPercent=0},
+      {x=-151.583,y=354.811,z=143.411,useTime=1750,accelPercent=-1},
+	  {x=-151.583,y=354.811,z=143.411,useTime=1200,accelPercent=0},
+   },
+   [SMART_ROTATE_RELATIVE]=
+   {
+      {x=0,y=0,z=0,w=1,useTime=0},
+      {x=-0.0434828,y=0.930493,z=0.117549,w=0.3442,useTime=0},
+      {x=0.0179846,y=-0.929941,z=0.0454187,w=0.36445,useTime=1500},
+      {x=-0.000870808,y=-0.998786,z=-0.0191767,w=0.0453545,useTime=0},
+      {x=0.00411655,y=-0.995822,z=0.0587097,w=0.0698241,useTime=1750},
+	  {x=0.00411655,y=-0.995822,z=0.0587097,w=0.0698241,useTime=1200},
+   },
+}
+smart_camera_config[999]=
+{
+}
+
+
+-- 技能 ID 与相机配置 ID 对应表
+-- 策划配置：[技能id] = 镜头id
+SkillId_SmartCameraId_Map = {}
+SkillId_SmartCameraId_Map =
+{
+   [284]=1,
+   [580]=2,
+   [581]=3,
+   [582]=4,
+   [583]=5,
+   [584]=26,
+   [575]=7,
+   [577]=8,
+   [2138]=2,
+   [2139]=3,
+   [2140]=4,
+   [2141]=5,
+   [2142]=26,
+   [5965]=65,
+
+}
