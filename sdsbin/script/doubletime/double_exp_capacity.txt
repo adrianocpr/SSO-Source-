@@ -1,0 +1,5 @@
+INT	INT	INT	INT	INT
+id	min_lvl	max_lvl	capacity	week_grant_time
+1	0	30	12	1
+2	31	60	12	2
+3	61	200	12	5

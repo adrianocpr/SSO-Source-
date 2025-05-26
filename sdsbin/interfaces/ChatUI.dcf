@@ -1,0 +1,9 @@
+// 第一个数字为x坐标，0/-1/-2表示靠左居中靠右，正数表示从左向右数多少个像素，负数-2表示从右向左数多少个像素。第二个数字为y方向，0表示上与x类似。第三个数字0表示初始不显示，1表示初始显示。
+Panel_ChatExBG.xml		-1	-1	1
+Panel_ChatExInput.xml	-1	-1	1
+Panel_ChatExOutput1.xml	-1	-1	1
+Panel_ChatExOutput2.xml	-1	-1	1
+Panel_ChatExOutput3.xml	-1	-1	1
+Panel_ChatEmotion.xml	-1	-1	0
+Panel_Hint.xml			-1  -1  0
+//Chat_Mini.xml	-1	-1	1
