@@ -1,0 +1,33 @@
+package gamecfg;
+
+message GameSetting
+{
+	message ChatChannelSetting//用户聊天频道设置
+	{
+		optional uint64 chatChannelShowMask = 1 [default = 0]; //所有聊天频道显示掩码
+		optional string name = 2;//用户定义名字
+	}
+	repeated ChatChannelSetting chatSetting = 1;
+	optional uint32 fontSize = 2 [default = 1];//聊天字体
+	optional bool autoReply = 3 [default = false];//是否自动回复
+	optional string autoReplyTxt = 4;//自动回复内容
+	message PkRule
+	{
+		optional uint32 pvpMask = 1;//pvp掩码
+		optional uint32 tabSelRule = 2;//tab选择规则
+	}
+	repeated PkRule pkRules = 5;//pk规则
+	optional int32 curPkRule = 6 [default = 0];//当前选取的pk规则标记
+	optional bool turnAround = 7 [default = false];//A,D转向
+	optional bool reverseWheel = 8 [default = false];//鼠标滚轮翻转
+	optional bool chatBubble = 9 [default = true];//聊天泡泡
+	optional uint32 extraInputMode = 10 [default = 0];//聊天栏停靠
+	optional bool chatAutoUseBindMoney = 11 [default = true];//世界发言是否自动使用绑定币
+	optional bool chatAutoWorldItem = 12 [default = false];//世界发言是否自动消耗喇叭
+	optional int32 bagItemFilterIndex = 13 [default = 0];//背包中物品筛选序号（拍卖一级标签）
+	repeated int32 activitiesSend = 14 [packed = true];//发送聊天活动标识
+	repeated int32 activitiesReceive = 15 [packed = true];//接受聊天活动标识
+	optional uint32 userSettingChanged = 16 [default = 0];//更改某个用户设置
+	optional uint32 currPetIndex = 17 [default = 0];//当前宠物
+	optional bool contestLevelIcon = 18 [default = false];//是否显示竞技等级
+}

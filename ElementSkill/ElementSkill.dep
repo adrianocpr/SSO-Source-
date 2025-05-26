@@ -1,0 +1,173 @@
+# Microsoft Developer Studio Generated Dependency File, included by ElementSkill.mak
+
+.\ElementSkill.cpp : \
+	"..\..\..\..\c\dependencies\microsoft sdk\include\guiddef.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\reason.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\stralign.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\tvout.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_new.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\ElementSkill.h"\
+	".\gnstring.h"\
+	".\playerwrapper.h"\
+	".\skill.h"\
+	".\skillstub.h"\
+	".\skillwrapper.h"\
+	".\StdAfx.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	{$(INCLUDE)}"hashmap.h"\
+	{$(INCLUDE)}"hashtab.h"\
+	{$(INCLUDE)}"vector.h"\
+	
+
+.\gnstring.cpp : \
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\gnstring.h"\
+	
+
+.\skill.cpp : \
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_new.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\ElementSkill.h"\
+	".\gnstring.h"\
+	".\playerwrapper.h"\
+	".\skill.h"\
+	".\skillstub.h"\
+	".\skillwrapper.h"\
+	{$(INCLUDE)}"hashmap.h"\
+	{$(INCLUDE)}"hashtab.h"\
+	{$(INCLUDE)}"vector.h"\
+	
+
+.\skillwrapper.cpp : \
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_new.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\ElementSkill.h"\
+	".\gnstring.h"\
+	".\playerwrapper.h"\
+	".\skill.h"\
+	".\skillstub.h"\
+	".\skillwrapper.h"\
+	{$(INCLUDE)}"hashmap.h"\
+	{$(INCLUDE)}"hashtab.h"\
+	{$(INCLUDE)}"vector.h"\
+	
+
+.\StdAfx.cpp : \
+	"..\..\..\..\c\dependencies\microsoft sdk\include\guiddef.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\reason.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\stralign.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\tvout.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\StdAfx.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	
+
+.\stubs1.cpp : \
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_new.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\ElementSkill.h"\
+	".\gnstring.h"\
+	".\playerwrapper.h"\
+	".\skill.h"\
+	".\skill_1.h"\
+	".\skill_10.h"\
+	".\skill_11.h"\
+	".\skill_12.h"\
+	".\skill_2.h"\
+	".\skill_4.h"\
+	".\skill_5.h"\
+	".\skill_6.h"\
+	".\skill_7.h"\
+	".\skill_8.h"\
+	".\skill_9.h"\
+	".\skillstub.h"\
+	".\skillwrapper.h"\
+	{$(INCLUDE)}"hashmap.h"\
+	{$(INCLUDE)}"hashtab.h"\
+	{$(INCLUDE)}"vector.h"\
+	

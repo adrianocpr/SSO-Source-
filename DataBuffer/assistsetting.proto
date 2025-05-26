@@ -1,0 +1,10 @@
+package gamecfg;
+
+message AssistSetting
+{
+	optional bool autoSelMonster = 1 [default = false];
+	optional bool autoMedicine = 2 [default = false];
+	optional int32 medicineHpRateIndex = 3 [default = 0];
+	optional int32 medicineId = 4 [default = 0];
+	optional bool isAnchored = 5 [default = false];
+}

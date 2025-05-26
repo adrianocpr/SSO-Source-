@@ -1,0 +1,26 @@
+package gamecfg;
+
+message LayoutSetting
+{
+	optional float chatUpperRatioX = 1;
+	optional float chatUpperRatioY = 2;
+	optional float chatLowerRatioX = 3;
+	optional float chatLowerRatioY = 4;
+	message SaveMark
+	{
+		optional float pos_x = 1;
+		optional float pos_y = 2;
+		optional float pos_z = 3;
+		optional string name = 4;
+		optional int32 instanceId = 5;
+	}
+	repeated SaveMark marks = 5;
+	optional bool onlineNotify = 6 [default = false];
+	optional bool friendAutoReply = 7 [default = false];
+	optional bool saveHistory = 8 [default = true];
+	optional bool lockQuickBar = 9 [default = false];
+	optional int32 quickBarType = 10 [default = 0];
+	optional int32 rightQuickBarType = 11 [default = 0];
+	repeated int32 questTraceBlockedIds = 12 [packed = true];
+}
+
