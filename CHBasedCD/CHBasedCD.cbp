@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CHBasedCD" />
+		<Option pch_mode="2" />
+		<Option compiler="microsoft_visual_c_6" />
+		<Build>
+			<Target title="Win32 Release">
+				<Option output="D:\C\workspace\SDSElement\SDSCHBasedCD\Release\CHBasedCD" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="Release" />
+				<Option type="2" />
+				<Option compiler="microsoft_visual_c_6" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="/W3" />
+					<Add option="/GX" />
+					<Add option="/O2" />
+					<Add option="/DWIN32" />
+					<Add option="/DNDEBUG" />
+					<Add option="/D_MBCS" />
+					<Add option="/D_LIB" />
+					<Add option="/YX" />
+					<Add option="/FD" />
+					<Add option="/MD" />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="xcopy release\*.lib ..\lib\cd\ /R /Y /Q" />
+					<Add after="xcopy *.h ..\include\cd\ /R /Y /Q" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Win32 Debug">
+				<Option output="D:\C\workspace\SDSElement\SDSCHBasedCD\Debug\CHBasedCD" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="Debug" />
+				<Option type="2" />
+				<Option compiler="microsoft_visual_c_6" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="/W3" />
+					<Add option="/Gm" />
+					<Add option="/GX" />
+					<Add option="/ZI" />
+					<Add option="/Od" />
+					<Add option="/DWIN32" />
+					<Add option="/D_DEBUG" />
+					<Add option="/D_MBCS" />
+					<Add option="/D_LIB" />
+					<Add option="/YX" />
+					<Add option="/FD" />
+					<Add option="/GZ" />
+					<Add option="/MDd" />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="xcopy debug\*.lib ..\lib\cd\ /R /Y /Q" />
+					<Add after="xcopy *.h ..\include\cd\ /R /Y /Q" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Win32 DbgRelease">
+				<Option output="D:\C\workspace\SDSElement\SDSCHBasedCD\DbgRelease\CHBasedCD" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="DbgRelease" />
+				<Option type="2" />
+				<Option compiler="microsoft_visual_c_6" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="/MD" />
+					<Add option="/W3" />
+					<Add option="/GX" />
+					<Add option="/O2" />
+					<Add option="/DWIN32" />
+					<Add option="/DNDEBUG" />
+					<Add option="/D_MBCS" />
+					<Add option="/D_LIB" />
+					<Add option="/YX" />
+					<Add option="/FD" />
+					<Add option="/Zi" />
+				</Compiler>
+				<ExtraCommands>
+					<Add after="xcopy dbgrelease\*.lib ..\lib\cd\ /R /Y /Q" />
+					<Add after="xcopy *.h ..\include\cd\ /R /Y /Q" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Unit filename="2DGiftWrap.cpp" />
+		<Unit filename="2DObstruct.cpp" />
+		<Unit filename="aabbcd.cpp" />
+		<Unit filename="CDWithCH.cpp" />
+		<Unit filename="CombGenerator.cpp" />
+		<Unit filename="ConvexHullAlgorithm.cpp" />
+		<Unit filename="ConvexHullData.cpp" />
+		<Unit filename="ConvexPolytope.cpp" />
+		<Unit filename="EdgeStack.cpp" />
+		<Unit filename="Face.cpp" />
+		<Unit filename="GiftWrap.cpp" />
+		<Unit filename="HalfSpace.cpp" />
+		<Unit filename="LEquations.cpp" />
+		<Unit filename="Matrix.cpp" />
+		<Unit filename="Patch.cpp" />
+		<Unit filename="RightPrism.cpp" />
+		<Unit filename="2DGiftWrap.h" />
+		<Unit filename="2DObstruct.h" />
+		<Unit filename="aabbcd.h" />
+		<Unit filename="CDWithCH.h" />
+		<Unit filename="CombGenerator.h" />
+		<Unit filename="ConvexHullAlgorithm.h" />
+		<Unit filename="ConvexHullData.h" />
+		<Unit filename="ConvexPolytope.h" />
+		<Unit filename="EdgeStack.h" />
+		<Unit filename="Face.h" />
+		<Unit filename="GiftWrap.h" />
+		<Unit filename="HalfSpace.h" />
+		<Unit filename="LEquations.h" />
+		<Unit filename="Matrix.h" />
+		<Unit filename="Patch.h" />
+		<Unit filename="RightPrism.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,1051 @@
+# Microsoft Developer Studio Generated Dependency File, included by CHBasedCD.mak
+
+.\2DGiftWrap.cpp : \
+	"..\..\..\..\c\dependencies\microsoft sdk\include\basetsd.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\guiddef.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\propidl.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\reason.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\stralign.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\tvout.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\winefs.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_new.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\2DGiftWrap.h"\
+	".\2DObstruct.h"\
+	".\ConvexHullAlgorithm.h"\
+	".\ConvexHullData.h"\
+	".\ConvexPolytope.h"\
+	".\EdgeStack.h"\
+	".\Face.h"\
+	".\GiftWrap.h"\
+	".\HalfSpace.h"\
+	".\Patch.h"\
+	".\RightPrism.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	{$(INCLUDE)}"a3dclassid.h"\
+	{$(INCLUDE)}"a3ddevobject.h"\
+	{$(INCLUDE)}"a3dflatcollector.h"\
+	{$(INCLUDE)}"a3dgeometry.h"\
+	{$(INCLUDE)}"a3dmatrix.h"\
+	{$(INCLUDE)}"a3dobject.h"\
+	{$(INCLUDE)}"a3dplatform.h"\
+	{$(INCLUDE)}"a3dquaternion.h"\
+	{$(INCLUDE)}"a3dtypes.h"\
+	{$(INCLUDE)}"a3dvector.h"\
+	{$(INCLUDE)}"a3dvertex.h"\
+	{$(INCLUDE)}"aarray.h"\
+	{$(INCLUDE)}"abasedef.h"\
+	{$(INCLUDE)}"acplatform.h"\
+	{$(INCLUDE)}"alist.h"\
+	{$(INCLUDE)}"alist2.h"\
+	{$(INCLUDE)}"alog.h"\
+	{$(INCLUDE)}"amemory.h"\
+	{$(INCLUDE)}"apoint.h"\
+	{$(INCLUDE)}"arect.h"\
+	{$(INCLUDE)}"astack.h"\
+	{$(INCLUDE)}"astring.h"\
+	{$(INCLUDE)}"d3d8.h"\
+	{$(INCLUDE)}"d3d8caps.h"\
+	{$(INCLUDE)}"d3d8types.h"\
+	{$(INCLUDE)}"d3dx8.h"\
+	{$(INCLUDE)}"d3dx8core.h"\
+	{$(INCLUDE)}"d3dx8effect.h"\
+	{$(INCLUDE)}"d3dx8math.h"\
+	{$(INCLUDE)}"d3dx8math.inl"\
+	{$(INCLUDE)}"d3dx8mesh.h"\
+	{$(INCLUDE)}"d3dx8shape.h"\
+	{$(INCLUDE)}"d3dx8tex.h"\
+	{$(INCLUDE)}"dxfile.h"\
+	{$(INCLUDE)}"vector.h"\
+	
+
+.\2DObstruct.cpp : \
+	"..\..\..\..\c\dependencies\microsoft sdk\include\basetsd.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\guiddef.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\propidl.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\reason.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\stralign.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\tvout.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\winefs.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_algobase.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_algobase.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_alloc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_auto_ptr.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_bitset.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_bitset.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_construct.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ctraits_fns.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ctype.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_cwchar.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function_adaptors.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_hash_fun.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iosfwd.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istream.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istream.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istreambuf_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator_old.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_limits.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_limits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_locale.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_new.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_get.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_get.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_put.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_put.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_numpunct.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostream.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostream.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostreambuf_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_pair.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_range_errors.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_raw_storage_iter.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_stdio_file.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_streambuf.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_streambuf.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_fwd.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_fwd.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_hash.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_io.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_io.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_tempbuf.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_tempbuf.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_threads.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_threads.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_uninitialized.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\c_locale.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\char_traits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\type_traits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\2DObstruct.h"\
+	".\ConvexHullData.h"\
+	".\Face.h"\
+	".\HalfSpace.h"\
+	".\LEquations.h"\
+	".\Matrix.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	{$(INCLUDE)}"a3dgeometry.h"\
+	{$(INCLUDE)}"a3dmatrix.h"\
+	{$(INCLUDE)}"a3dvector.h"\
+	{$(INCLUDE)}"aarray.h"\
+	{$(INCLUDE)}"abasedef.h"\
+	{$(INCLUDE)}"acplatform.h"\
+	{$(INCLUDE)}"alog.h"\
+	{$(INCLUDE)}"amemory.h"\
+	{$(INCLUDE)}"vector.h"\
+	
+
+.\aabbcd.cpp : \
+	"..\..\..\..\c\dependencies\microsoft sdk\include\basetsd.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\guiddef.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\propidl.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\reason.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\stralign.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\tvout.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\winefs.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\aabbcd.h"\
+	".\ConvexHullData.h"\
+	".\Face.h"\
+	".\HalfSpace.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	{$(INCLUDE)}"a3dclassid.h"\
+	{$(INCLUDE)}"a3ddevobject.h"\
+	{$(INCLUDE)}"a3dflatcollector.h"\
+	{$(INCLUDE)}"a3dgeometry.h"\
+	{$(INCLUDE)}"a3dmatrix.h"\
+	{$(INCLUDE)}"a3dobject.h"\
+	{$(INCLUDE)}"a3dplatform.h"\
+	{$(INCLUDE)}"a3dquaternion.h"\
+	{$(INCLUDE)}"a3dtypes.h"\
+	{$(INCLUDE)}"a3dvector.h"\
+	{$(INCLUDE)}"a3dvertex.h"\
+	{$(INCLUDE)}"aarray.h"\
+	{$(INCLUDE)}"aassist.h"\
+	{$(INCLUDE)}"abasedef.h"\
+	{$(INCLUDE)}"ac.h"\
+	{$(INCLUDE)}"achar.h"\
+	{$(INCLUDE)}"acounter.h"\
+	{$(INCLUDE)}"acplatform.h"\
+	{$(INCLUDE)}"acswrapper.h"\
+	{$(INCLUDE)}"afile.h"\
+	{$(INCLUDE)}"afplatform.h"\
+	{$(INCLUDE)}"alist.h"\
+	{$(INCLUDE)}"alist2.h"\
+	{$(INCLUDE)}"alog.h"\
+	{$(INCLUDE)}"amemory.h"\
+	{$(INCLUDE)}"aperlinnoise1d.h"\
+	{$(INCLUDE)}"aperlinnoise2d.h"\
+	{$(INCLUDE)}"aperlinnoise3d.h"\
+	{$(INCLUDE)}"aperlinnoisebase.h"\
+	{$(INCLUDE)}"apoint.h"\
+	{$(INCLUDE)}"arandomgen.h"\
+	{$(INCLUDE)}"arect.h"\
+	{$(INCLUDE)}"astack.h"\
+	{$(INCLUDE)}"astring.h"\
+	{$(INCLUDE)}"atime.h"\
+	{$(INCLUDE)}"awstring.h"\
+	{$(INCLUDE)}"d3d8.h"\
+	{$(INCLUDE)}"d3d8caps.h"\
+	{$(INCLUDE)}"d3d8types.h"\
+	{$(INCLUDE)}"d3dx8.h"\
+	{$(INCLUDE)}"d3dx8core.h"\
+	{$(INCLUDE)}"d3dx8effect.h"\
+	{$(INCLUDE)}"d3dx8math.h"\
+	{$(INCLUDE)}"d3dx8math.inl"\
+	{$(INCLUDE)}"d3dx8mesh.h"\
+	{$(INCLUDE)}"d3dx8shape.h"\
+	{$(INCLUDE)}"d3dx8tex.h"\
+	{$(INCLUDE)}"dxfile.h"\
+	{$(INCLUDE)}"jexception.h"\
+	
+
+.\CDWithCH.cpp : \
+	"..\..\..\..\c\dependencies\microsoft sdk\include\basetsd.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\guiddef.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\propidl.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\reason.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\stralign.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\tvout.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\winefs.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\CDWithCH.h"\
+	".\ConvexHullData.h"\
+	".\Face.h"\
+	".\HalfSpace.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	{$(INCLUDE)}"a3dcollision.h"\
+	{$(INCLUDE)}"a3dgeometry.h"\
+	{$(INCLUDE)}"a3dmatrix.h"\
+	{$(INCLUDE)}"a3dquaternion.h"\
+	{$(INCLUDE)}"a3dtypes.h"\
+	{$(INCLUDE)}"a3dvector.h"\
+	{$(INCLUDE)}"aarray.h"\
+	{$(INCLUDE)}"abasedef.h"\
+	{$(INCLUDE)}"acplatform.h"\
+	{$(INCLUDE)}"alog.h"\
+	{$(INCLUDE)}"amemory.h"\
+	{$(INCLUDE)}"apoint.h"\
+	{$(INCLUDE)}"arect.h"\
+	
+
+.\CombGenerator.cpp : \
+	".\CombGenerator.h"\
+	
+
+.\ConvexHullAlgorithm.cpp : \
+	"..\..\..\..\c\dependencies\microsoft sdk\include\basetsd.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\guiddef.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\propidl.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\reason.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\stralign.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\tvout.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\winefs.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\ConvexHullAlgorithm.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	{$(INCLUDE)}"a3dvector.h"\
+	{$(INCLUDE)}"aarray.h"\
+	{$(INCLUDE)}"abasedef.h"\
+	{$(INCLUDE)}"acplatform.h"\
+	{$(INCLUDE)}"alog.h"\
+	{$(INCLUDE)}"amemory.h"\
+	
+
+.\ConvexHullData.cpp : \
+	"..\..\..\..\c\dependencies\microsoft sdk\include\basetsd.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\guiddef.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\propidl.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\reason.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\stralign.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\tvout.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\winefs.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\CDWithCH.h"\
+	".\ConvexHullData.h"\
+	".\Face.h"\
+	".\HalfSpace.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	{$(INCLUDE)}"a3dclassid.h"\
+	{$(INCLUDE)}"a3dcollision.h"\
+	{$(INCLUDE)}"a3dcontrol.h"\
+	{$(INCLUDE)}"a3ddevobject.h"\
+	{$(INCLUDE)}"a3dflatcollector.h"\
+	{$(INCLUDE)}"a3dgdi.h"\
+	{$(INCLUDE)}"a3dgeometry.h"\
+	{$(INCLUDE)}"a3dmatrix.h"\
+	{$(INCLUDE)}"a3dobject.h"\
+	{$(INCLUDE)}"a3dplatform.h"\
+	{$(INCLUDE)}"a3dquaternion.h"\
+	{$(INCLUDE)}"a3dtypes.h"\
+	{$(INCLUDE)}"a3dvector.h"\
+	{$(INCLUDE)}"a3dvertex.h"\
+	{$(INCLUDE)}"aarray.h"\
+	{$(INCLUDE)}"aassist.h"\
+	{$(INCLUDE)}"abasedef.h"\
+	{$(INCLUDE)}"ac.h"\
+	{$(INCLUDE)}"achar.h"\
+	{$(INCLUDE)}"acounter.h"\
+	{$(INCLUDE)}"acplatform.h"\
+	{$(INCLUDE)}"acswrapper.h"\
+	{$(INCLUDE)}"afile.h"\
+	{$(INCLUDE)}"afplatform.h"\
+	{$(INCLUDE)}"alist.h"\
+	{$(INCLUDE)}"alist2.h"\
+	{$(INCLUDE)}"alog.h"\
+	{$(INCLUDE)}"amemory.h"\
+	{$(INCLUDE)}"aperlinnoise1d.h"\
+	{$(INCLUDE)}"aperlinnoise2d.h"\
+	{$(INCLUDE)}"aperlinnoise3d.h"\
+	{$(INCLUDE)}"aperlinnoisebase.h"\
+	{$(INCLUDE)}"apoint.h"\
+	{$(INCLUDE)}"arandomgen.h"\
+	{$(INCLUDE)}"arect.h"\
+	{$(INCLUDE)}"astack.h"\
+	{$(INCLUDE)}"astring.h"\
+	{$(INCLUDE)}"atime.h"\
+	{$(INCLUDE)}"awstring.h"\
+	{$(INCLUDE)}"d3d8.h"\
+	{$(INCLUDE)}"d3d8caps.h"\
+	{$(INCLUDE)}"d3d8types.h"\
+	{$(INCLUDE)}"d3dx8.h"\
+	{$(INCLUDE)}"d3dx8core.h"\
+	{$(INCLUDE)}"d3dx8effect.h"\
+	{$(INCLUDE)}"d3dx8math.h"\
+	{$(INCLUDE)}"d3dx8math.inl"\
+	{$(INCLUDE)}"d3dx8mesh.h"\
+	{$(INCLUDE)}"d3dx8shape.h"\
+	{$(INCLUDE)}"d3dx8tex.h"\
+	{$(INCLUDE)}"dxfile.h"\
+	{$(INCLUDE)}"jexception.h"\
+	
+
+.\ConvexPolytope.cpp : \
+	"..\..\..\..\c\dependencies\microsoft sdk\include\basetsd.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\guiddef.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\propidl.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\reason.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\stralign.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\tvout.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\winefs.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\2DGiftWrap.h"\
+	".\ConvexHullAlgorithm.h"\
+	".\ConvexHullData.h"\
+	".\ConvexPolytope.h"\
+	".\EdgeStack.h"\
+	".\Face.h"\
+	".\GiftWrap.h"\
+	".\HalfSpace.h"\
+	".\Patch.h"\
+	".\RightPrism.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	{$(INCLUDE)}"a3dclassid.h"\
+	{$(INCLUDE)}"a3dcontrol.h"\
+	{$(INCLUDE)}"a3ddevobject.h"\
+	{$(INCLUDE)}"a3dflatcollector.h"\
+	{$(INCLUDE)}"a3dgdi.h"\
+	{$(INCLUDE)}"a3dgeometry.h"\
+	{$(INCLUDE)}"a3dmatrix.h"\
+	{$(INCLUDE)}"a3dobject.h"\
+	{$(INCLUDE)}"a3dplatform.h"\
+	{$(INCLUDE)}"a3dquaternion.h"\
+	{$(INCLUDE)}"a3dtypes.h"\
+	{$(INCLUDE)}"a3dvector.h"\
+	{$(INCLUDE)}"a3dvertex.h"\
+	{$(INCLUDE)}"aarray.h"\
+	{$(INCLUDE)}"abasedef.h"\
+	{$(INCLUDE)}"acplatform.h"\
+	{$(INCLUDE)}"alist.h"\
+	{$(INCLUDE)}"alist2.h"\
+	{$(INCLUDE)}"alog.h"\
+	{$(INCLUDE)}"amemory.h"\
+	{$(INCLUDE)}"apoint.h"\
+	{$(INCLUDE)}"arect.h"\
+	{$(INCLUDE)}"astack.h"\
+	{$(INCLUDE)}"astring.h"\
+	{$(INCLUDE)}"d3d8.h"\
+	{$(INCLUDE)}"d3d8caps.h"\
+	{$(INCLUDE)}"d3d8types.h"\
+	{$(INCLUDE)}"d3dx8.h"\
+	{$(INCLUDE)}"d3dx8core.h"\
+	{$(INCLUDE)}"d3dx8effect.h"\
+	{$(INCLUDE)}"d3dx8math.h"\
+	{$(INCLUDE)}"d3dx8math.inl"\
+	{$(INCLUDE)}"d3dx8mesh.h"\
+	{$(INCLUDE)}"d3dx8shape.h"\
+	{$(INCLUDE)}"d3dx8tex.h"\
+	{$(INCLUDE)}"dxfile.h"\
+	
+
+.\EdgeStack.cpp : \
+	"..\..\..\..\c\dependencies\microsoft sdk\include\basetsd.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\guiddef.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\propidl.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\reason.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\stralign.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\tvout.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\winefs.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\ConvexHullAlgorithm.h"\
+	".\EdgeStack.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	{$(INCLUDE)}"a3dvector.h"\
+	{$(INCLUDE)}"aarray.h"\
+	{$(INCLUDE)}"abasedef.h"\
+	{$(INCLUDE)}"acplatform.h"\
+	{$(INCLUDE)}"alog.h"\
+	{$(INCLUDE)}"amemory.h"\
+	{$(INCLUDE)}"astack.h"\
+	
+
+.\Face.cpp : \
+	"..\..\..\..\c\dependencies\microsoft sdk\include\basetsd.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\guiddef.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\propidl.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\reason.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\stralign.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\tvout.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\winefs.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_algobase.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_algobase.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_alloc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_auto_ptr.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_bitset.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_bitset.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_construct.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ctraits_fns.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ctype.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_cwchar.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function_adaptors.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_hash_fun.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iosfwd.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istream.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istream.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istreambuf_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator_old.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_limits.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_limits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_locale.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_new.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_get.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_get.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_put.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_put.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_numpunct.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostream.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostream.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostreambuf_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_pair.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_range_errors.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_raw_storage_iter.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_stdio_file.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_streambuf.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_streambuf.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_fwd.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_fwd.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_hash.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_io.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_io.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_tempbuf.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_tempbuf.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_threads.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_threads.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_uninitialized.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\c_locale.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\char_traits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\type_traits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\ConvexHullData.h"\
+	".\Face.h"\
+	".\HalfSpace.h"\
+	".\LEquations.h"\
+	".\Matrix.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	{$(INCLUDE)}"a3dgeometry.h"\
+	{$(INCLUDE)}"a3dmatrix.h"\
+	{$(INCLUDE)}"a3dvector.h"\
+	{$(INCLUDE)}"aarray.h"\
+	{$(INCLUDE)}"abasedef.h"\
+	{$(INCLUDE)}"acplatform.h"\
+	{$(INCLUDE)}"alog.h"\
+	{$(INCLUDE)}"amemory.h"\
+	
+
+.\GiftWrap.cpp : \
+	"..\..\..\..\c\dependencies\microsoft sdk\include\basetsd.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\guiddef.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\propidl.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\reason.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\stralign.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\tvout.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\winefs.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\ConvexHullAlgorithm.h"\
+	".\ConvexPolytope.h"\
+	".\EdgeStack.h"\
+	".\GiftWrap.h"\
+	".\HalfSpace.h"\
+	".\Patch.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	{$(INCLUDE)}"a3dclassid.h"\
+	{$(INCLUDE)}"a3ddevobject.h"\
+	{$(INCLUDE)}"a3dflatcollector.h"\
+	{$(INCLUDE)}"a3dgeometry.h"\
+	{$(INCLUDE)}"a3dmatrix.h"\
+	{$(INCLUDE)}"a3dobject.h"\
+	{$(INCLUDE)}"a3dplatform.h"\
+	{$(INCLUDE)}"a3dquaternion.h"\
+	{$(INCLUDE)}"a3dtypes.h"\
+	{$(INCLUDE)}"a3dvector.h"\
+	{$(INCLUDE)}"a3dvertex.h"\
+	{$(INCLUDE)}"aarray.h"\
+	{$(INCLUDE)}"abasedef.h"\
+	{$(INCLUDE)}"acplatform.h"\
+	{$(INCLUDE)}"alist.h"\
+	{$(INCLUDE)}"alist2.h"\
+	{$(INCLUDE)}"alog.h"\
+	{$(INCLUDE)}"amemory.h"\
+	{$(INCLUDE)}"apoint.h"\
+	{$(INCLUDE)}"arect.h"\
+	{$(INCLUDE)}"astack.h"\
+	{$(INCLUDE)}"astring.h"\
+	{$(INCLUDE)}"d3d8.h"\
+	{$(INCLUDE)}"d3d8caps.h"\
+	{$(INCLUDE)}"d3d8types.h"\
+	{$(INCLUDE)}"d3dx8.h"\
+	{$(INCLUDE)}"d3dx8core.h"\
+	{$(INCLUDE)}"d3dx8effect.h"\
+	{$(INCLUDE)}"d3dx8math.h"\
+	{$(INCLUDE)}"d3dx8math.inl"\
+	{$(INCLUDE)}"d3dx8mesh.h"\
+	{$(INCLUDE)}"d3dx8shape.h"\
+	{$(INCLUDE)}"d3dx8tex.h"\
+	{$(INCLUDE)}"dxfile.h"\
+	
+
+.\HalfSpace.cpp : \
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\HalfSpace.h"\
+	{$(INCLUDE)}"a3dmatrix.h"\
+	{$(INCLUDE)}"a3dvector.h"\
+	
+
+.\LEquations.cpp : \
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_algobase.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_algobase.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_alloc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_auto_ptr.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_bitset.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_bitset.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_construct.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ctraits_fns.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ctype.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_cwchar.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function_adaptors.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_hash_fun.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iosfwd.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istream.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istream.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istreambuf_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator_old.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_limits.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_limits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_locale.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_new.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_get.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_get.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_put.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_put.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_numpunct.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostream.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostream.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostreambuf_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_pair.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_range_errors.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_raw_storage_iter.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_stdio_file.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_streambuf.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_streambuf.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_fwd.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_fwd.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_hash.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_io.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_io.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_tempbuf.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_tempbuf.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_threads.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_threads.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_uninitialized.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\c_locale.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\char_traits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\type_traits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\LEquations.h"\
+	".\Matrix.h"\
+	
+
+.\Matrix.cpp : \
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_algobase.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_algobase.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_alloc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_auto_ptr.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_bitset.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_bitset.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_construct.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ctraits_fns.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ctype.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_cwchar.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function_adaptors.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_hash_fun.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iosfwd.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istream.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istream.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istreambuf_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator_old.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_limits.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_limits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_locale.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_new.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_get.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_get.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_put.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_put.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_numpunct.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostream.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostream.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostreambuf_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_pair.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_range_errors.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_raw_storage_iter.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_stdio_file.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_streambuf.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_streambuf.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_fwd.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_fwd.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_hash.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_io.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_io.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_tempbuf.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_tempbuf.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_threads.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_threads.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_uninitialized.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\c_locale.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\char_traits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\type_traits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\Matrix.h"\
+	
+
+.\Patch.cpp : \
+	"..\..\..\..\c\dependencies\microsoft sdk\include\basetsd.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\guiddef.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\propidl.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\reason.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\stralign.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\tvout.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\winefs.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_algobase.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_algobase.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_alloc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_auto_ptr.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_bitset.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_bitset.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_construct.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ctraits_fns.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ctype.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_cwchar.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function_adaptors.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_function_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_hash_fun.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ios_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iosfwd.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istream.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istream.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_istreambuf_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator_base.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_iterator_old.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_limits.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_limits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_locale.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_new.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_get.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_get.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_put.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_num_put.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_numpunct.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostream.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostream.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_ostreambuf_iterator.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_pair.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_range_errors.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_raw_storage_iter.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_stdio_file.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_streambuf.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_streambuf.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_fwd.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_fwd.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_hash.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_io.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_string_io.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_tempbuf.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_tempbuf.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_threads.c"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_threads.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_uninitialized.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\c_locale.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\char_traits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\type_traits.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\CombGenerator.h"\
+	".\ConvexPolytope.h"\
+	".\HalfSpace.h"\
+	".\LEquations.h"\
+	".\Matrix.h"\
+	".\Patch.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	{$(INCLUDE)}"a3dclassid.h"\
+	{$(INCLUDE)}"a3ddevobject.h"\
+	{$(INCLUDE)}"a3dflatcollector.h"\
+	{$(INCLUDE)}"a3dgeometry.h"\
+	{$(INCLUDE)}"a3dmatrix.h"\
+	{$(INCLUDE)}"a3dobject.h"\
+	{$(INCLUDE)}"a3dplatform.h"\
+	{$(INCLUDE)}"a3dquaternion.h"\
+	{$(INCLUDE)}"a3dtypes.h"\
+	{$(INCLUDE)}"a3dvector.h"\
+	{$(INCLUDE)}"a3dvertex.h"\
+	{$(INCLUDE)}"aarray.h"\
+	{$(INCLUDE)}"abasedef.h"\
+	{$(INCLUDE)}"acplatform.h"\
+	{$(INCLUDE)}"alist.h"\
+	{$(INCLUDE)}"alist2.h"\
+	{$(INCLUDE)}"alog.h"\
+	{$(INCLUDE)}"amemory.h"\
+	{$(INCLUDE)}"apoint.h"\
+	{$(INCLUDE)}"arect.h"\
+	{$(INCLUDE)}"astring.h"\
+	{$(INCLUDE)}"d3d8.h"\
+	{$(INCLUDE)}"d3d8caps.h"\
+	{$(INCLUDE)}"d3d8types.h"\
+	{$(INCLUDE)}"d3dx8.h"\
+	{$(INCLUDE)}"d3dx8core.h"\
+	{$(INCLUDE)}"d3dx8effect.h"\
+	{$(INCLUDE)}"d3dx8math.h"\
+	{$(INCLUDE)}"d3dx8math.inl"\
+	{$(INCLUDE)}"d3dx8mesh.h"\
+	{$(INCLUDE)}"d3dx8shape.h"\
+	{$(INCLUDE)}"d3dx8tex.h"\
+	{$(INCLUDE)}"dxfile.h"\
+	
+
+.\RightPrism.cpp : \
+	"..\..\..\..\c\dependencies\microsoft sdk\include\basetsd.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\guiddef.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\propidl.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\reason.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\stralign.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\tvout.h"\
+	"..\..\..\..\c\dependencies\microsoft sdk\include\winefs.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_msvc_warnings_off.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_confix.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_msvc.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stl_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\stlcomp.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\config\vc_select_lib.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_config_compat_post.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_epilog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_new.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_prolog.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl\_site_config.h"\
+	"..\..\..\..\c\dependencies\stlport\stlport\stl_user_config.h"\
+	".\2DGiftWrap.h"\
+	".\2DObstruct.h"\
+	".\ConvexHullAlgorithm.h"\
+	".\ConvexHullData.h"\
+	".\ConvexPolytope.h"\
+	".\EdgeStack.h"\
+	".\Face.h"\
+	".\GiftWrap.h"\
+	".\HalfSpace.h"\
+	".\Patch.h"\
+	".\RightPrism.h"\
+	"c:\dxsdk\include\basetsd.h"\
+	{$(INCLUDE)}"a3dclassid.h"\
+	{$(INCLUDE)}"a3ddevobject.h"\
+	{$(INCLUDE)}"a3dflatcollector.h"\
+	{$(INCLUDE)}"a3dgeometry.h"\
+	{$(INCLUDE)}"a3dmatrix.h"\
+	{$(INCLUDE)}"a3dobject.h"\
+	{$(INCLUDE)}"a3dplatform.h"\
+	{$(INCLUDE)}"a3dquaternion.h"\
+	{$(INCLUDE)}"a3dtypes.h"\
+	{$(INCLUDE)}"a3dvector.h"\
+	{$(INCLUDE)}"a3dvertex.h"\
+	{$(INCLUDE)}"aarray.h"\
+	{$(INCLUDE)}"abasedef.h"\
+	{$(INCLUDE)}"acplatform.h"\
+	{$(INCLUDE)}"alist.h"\
+	{$(INCLUDE)}"alist2.h"\
+	{$(INCLUDE)}"alog.h"\
+	{$(INCLUDE)}"amemory.h"\
+	{$(INCLUDE)}"apoint.h"\
+	{$(INCLUDE)}"arect.h"\
+	{$(INCLUDE)}"astack.h"\
+	{$(INCLUDE)}"astring.h"\
+	{$(INCLUDE)}"d3d8.h"\
+	{$(INCLUDE)}"d3d8caps.h"\
+	{$(INCLUDE)}"d3d8types.h"\
+	{$(INCLUDE)}"d3dx8.h"\
+	{$(INCLUDE)}"d3dx8core.h"\
+	{$(INCLUDE)}"d3dx8effect.h"\
+	{$(INCLUDE)}"d3dx8math.h"\
+	{$(INCLUDE)}"d3dx8math.inl"\
+	{$(INCLUDE)}"d3dx8mesh.h"\
+	{$(INCLUDE)}"d3dx8shape.h"\
+	{$(INCLUDE)}"d3dx8tex.h"\
+	{$(INCLUDE)}"dxfile.h"\
+	{$(INCLUDE)}"vector.h"\
+	
