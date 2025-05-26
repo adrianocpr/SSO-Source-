@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="Angelica2_2"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="&quot;$(SolutionDir)\Include\SDK2_2Ex&quot;;&quot;$(ANGELICA2.2)\3rdSDK\Include&quot;;&quot;$(ANGELICA2.2)\3rdSDK\Include\PropDlg&quot;;&quot;$(ANGELICA2.2)\3rdSDK\Include\dshow&quot;;&quot;$(ANGELICA2.2)\aaudio\include&quot;;&quot;$(ANGELICA2.2)\a3dSDK\Include&quot;;&quot;$(ANGELICA2.2)\acSDK\Include&quot;;&quot;$(ANGELICA2.2)\afSDK\Include&quot;;&quot;$(ANGELICA2.2)\amSDK\Include&quot;;&quot;$(ANGELICA2.2)\apSDK\Include&quot;"
+	/>
+	<Tool
+		Name="VCLibrarianTool"
+		AdditionalLibraryDirectories="&quot;$(ANGELICA2.2)\a3dsdk\lib&quot;;&quot;$(ANGELICA2.2)\3rdsdk\lib&quot;;&quot;$(ANGELICA2.2)\aaudio\lib&quot;;&quot;$(ANGELICA2.2)\DbgRelease\Angelica3D\DBGRelease&quot;;&quot;$(ANGELICA2.2)\DbgRelease\AngelicaCommon\DBGRelease&quot;;&quot;$(ANGELICA2.2)\DbgRelease\AngelicaFile\DBGRelease&quot;;&quot;$(ANGELICA2.2)\DbgRelease\AngelicaMedia\DBGRelease&quot;"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalLibraryDirectories="&quot;$(ANGELICA2.2)\a3dsdk\lib&quot;;&quot;$(ANGELICA2.2)\3rdsdk\lib&quot;;&quot;$(ANGELICA2.2)\aaudio\lib&quot;;&quot;$(ANGELICA2.2)\DbgRelease\A3DPlatform&quot;;&quot;$(ANGELICA2.2)\DbgRelease\Angelica3D\DBGRelease&quot;;&quot;$(ANGELICA2.2)\DbgRelease\AngelicaCommon\DBGRelease&quot;;&quot;$(ANGELICA2.2)\DbgRelease\AngelicaFile\DBGRelease&quot;;&quot;$(ANGELICA2.2)\DbgRelease\AngelicaMedia\DBGRelease&quot;"
+	/>
+</VisualStudioPropertySheet>

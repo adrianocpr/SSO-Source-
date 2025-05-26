@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="seiya"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories=".;&quot;$(SolutionDir)\Include\Lua&quot;;&quot;$(SolutionDir)\Include\LuaWrapper&quot;;&quot;$(SolutionDir)\Include\a3dplatform&quot;;&quot;$(SolutionDir)\Include\aui&quot;;&quot;$(SolutionDir)\Include\Gfx&quot;"
+	/>
+	<Tool
+		Name="VCLibrarianTool"
+		AdditionalLibraryDirectories="&quot;$(SolutionDir)\lib&quot;"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalLibraryDirectories="&quot;$(SolutionDir)\lib&quot;"
+	/>
+</VisualStudioPropertySheet>
